@@ -21,8 +21,8 @@ const MAPA = {x: 130, y: 165, w: 720, h: 665};
 export const Cena3Numeros: React.FC = () => {
 	const frame = useCurrentFrame();
 	const t = useTempoCena();
-	const fimA = t(0.48);
-	const iniB = t(0.46);
+	const fimA = t(0.45);
+	const iniB = t(0.43);
 	const fimB = t(0.83);
 	const iniC = t(0.81);
 
@@ -93,8 +93,8 @@ export const Cena3Numeros: React.FC = () => {
 					</div>
 					<div style={{position: 'absolute', left: 360, top: 170}}>
 						<GraficoBarras
-							inicio={iniB + 14}
-							intervalo={18}
+							inicio={iniB + 8}
+							intervalo={10}
 							largura={1200}
 							altura={560}
 							maximo={25}
