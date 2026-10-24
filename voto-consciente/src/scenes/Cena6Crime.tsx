@@ -1,7 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import {CORES, FONTES} from '../config';
-import {janela, useTempoCena} from '../anim';
+import {janela, useMarcas} from '../anim';
 import {KenBurns} from '../components/KenBurns';
 import {Titulo} from '../components/Titulo';
 import {Recorte} from '../components/Recorte';
@@ -13,9 +13,9 @@ import {IconeX} from '../components/Icones';
 // Lei nº 9.504/1997 (Lei das Eleições), art. 41-A — incluído pela Lei nº 9.840/1999.
 export const Cena6Crime: React.FC = () => {
 	const frame = useCurrentFrame();
-	const t = useTempoCena();
-	const fimA = t(0.55);
-	const iniB = t(0.53);
+	const m = useMarcas();
+	const fimA = m(5, 10);
+	const iniB = m(5, -6);
 
 	return (
 		<AbsoluteFill>
@@ -23,23 +23,23 @@ export const Cena6Crime: React.FC = () => {
 			<AbsoluteFill style={{opacity: janela(frame, -12, fimA)}}>
 				<KenBurns zoom={[1.0, 1.05]} origem="35% 50%">
 					<Titulo texto="Compra de votos" inicio={4} />
-					<Recorte seed="lei299" inicio={t(0.2)} cor="#F7F1E1" rotacao={-1.5} intensidade={1.4} style={{left: 120, top: 190, width: 900}} padding="34px 42px 40px">
+					<Recorte seed="lei299" inicio={m(2, -8)} cor="#F7F1E1" rotacao={-1.5} intensidade={1.4} style={{left: 120, top: 190, width: 900}} padding="34px 42px 40px">
 						<div style={{fontFamily: FONTES.texto, fontWeight: 800, fontSize: 24, letterSpacing: 2, color: CORES.cinza, borderBottom: `3px solid ${CORES.preto}`, paddingBottom: 10, marginBottom: 18}}>
 							CÓDIGO ELEITORAL · LEI Nº 4.737/1965
 						</div>
 						<div style={{fontFamily: FONTES.jornal, fontWeight: 700, fontSize: 35, lineHeight: 1.42, color: CORES.preto}}>
-							<b>Art. 299.</b> <MarcaTexto inicio={t(0.3)}>Dar, oferecer, prometer,</MarcaTexto>{' '}
-							<MarcaTexto inicio={t(0.43)}>solicitar ou receber,</MarcaTexto> para si ou para outrem, dinheiro, dádiva, ou qualquer outra vantagem, para obter ou dar voto (…)
+							<b>Art. 299.</b> <MarcaTexto inicio={m(4)}>Dar, oferecer, prometer,</MarcaTexto>{' '}
+							<MarcaTexto inicio={m(4.55)}>solicitar ou receber,</MarcaTexto> para si ou para outrem, dinheiro, dádiva, ou qualquer outra vantagem, para obter ou dar voto (…)
 							<div style={{marginTop: 14}}>
-								<MarcaTexto inicio={t(0.34)}>Pena – reclusão até quatro anos</MarcaTexto> e pagamento de cinco a quinze dias-multa.
+								<MarcaTexto inicio={m(3, 4)}>Pena – reclusão até quatro anos</MarcaTexto> e pagamento de cinco a quinze dias-multa.
 							</div>
 						</div>
 					</Recorte>
-					<Carimbo inicio={t(0.12)} />
-					<Recorte seed="pena" inicio={t(0.32)} cor={CORES.amarelo} rotacao={2} style={{left: 1130, top: 470, width: 640}} padding="22px 32px">
+					<Carimbo inicio={m(1.45)} />
+					<Recorte seed="pena" inicio={m(3.3)} cor={CORES.amarelo} rotacao={2} style={{left: 1130, top: 470, width: 640}} padding="22px 32px">
 						<div style={{fontFamily: FONTES.titulo, fontSize: 50, color: CORES.preto, lineHeight: 1.1}}>Até 4 anos de reclusão + multa</div>
 					</Recorte>
-					<Recorte seed="quem" inicio={t(0.43)} rotacao={-1} style={{left: 1130, top: 640, width: 640}} padding="18px 32px">
+					<Recorte seed="quem" inicio={m(4.3)} rotacao={-1} style={{left: 1130, top: 640, width: 640}} padding="18px 32px">
 						<div style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center'}}>
 							{['quem oferece', 'quem aceita'].map((q) => (
 								<div key={q} style={{display: 'flex', alignItems: 'center', gap: 10}}>
@@ -49,12 +49,12 @@ export const Cena6Crime: React.FC = () => {
 							))}
 						</div>
 					</Recorte>
-					<Fonte texto="LEI Nº 4.737/1965 (CÓDIGO ELEITORAL), ART. 299" inicio={t(0.22)} style={{left: 130, top: 775}} />
+					<Fonte texto="LEI Nº 4.737/1965 (CÓDIGO ELEITORAL), ART. 299" inicio={m(2)} style={{left: 130, top: 775}} />
 				</KenBurns>
 			</AbsoluteFill>
 
 			{/* Parte B: o candidato e a denúncia */}
-			<AbsoluteFill style={{opacity: janela(frame, iniB, t(1) + 40)}}>
+			<AbsoluteFill style={{opacity: janela(frame, iniB, 99999)}}>
 				<KenBurns zoom={[1.05, 1.0]}>
 					<Titulo texto="E o candidato?" inicio={iniB} />
 					<Recorte seed="41a" inicio={iniB + 10} cor="#F7F1E1" rotacao={1.5} style={{left: 130, top: 220, width: 860}} padding="36px 44px 44px">
@@ -62,10 +62,10 @@ export const Cena6Crime: React.FC = () => {
 							LEI DAS ELEIÇÕES · LEI Nº 9.504/1997, ART. 41-A
 						</div>
 						<div style={{fontFamily: FONTES.jornal, fontWeight: 700, fontSize: 40, lineHeight: 1.35, color: CORES.preto}}>
-							Comprar votos pode custar ao candidato <MarcaTexto inicio={t(0.68)}>multa e cassação do registro ou do diploma</MarcaTexto> — ou seja, perder a candidatura ou o mandato.
+							Comprar votos pode custar ao candidato <MarcaTexto inicio={m(6)}>multa e cassação do registro ou do diploma</MarcaTexto> — ou seja, perder a candidatura ou o mandato.
 						</div>
 					</Recorte>
-					<Recorte seed="pardal" inicio={t(0.84)} cor={CORES.azul} rotacao={-2} style={{left: 1110, top: 300, width: 660}} padding="34px 40px">
+					<Recorte seed="pardal" inicio={m(8)} cor={CORES.azul} rotacao={-2} style={{left: 1110, top: 300, width: 660}} padding="34px 40px">
 						<div style={{fontFamily: FONTES.texto, fontWeight: 800, fontSize: 36, color: CORES.azulClaro}}>VIU COMPRA DE VOTOS?</div>
 						<div style={{fontFamily: FONTES.titulo, fontSize: 70, color: CORES.papel, lineHeight: 1.1, marginTop: 6}}>Denuncie no app Pardal</div>
 						<div style={{fontFamily: FONTES.texto, fontWeight: 700, fontSize: 30, color: CORES.papel, marginTop: 10}}>aplicativo oficial do TSE</div>

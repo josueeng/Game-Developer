@@ -1,3 +1,4 @@
+import React from 'react';
 import {Easing, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 
 // Converte uma fração da cena (0–1) em quadro. Assim, quando a duração da cena
@@ -29,3 +30,22 @@ export const janela = (frame: number, de: number, ate: number, fade = 12) =>
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 	});
+
+// Quadro (relativo ao início da cena) em que começa cada legenda da cena.
+// Preenchido por Video.tsx a partir dos tempos da narração (ou da estimativa
+// do roteiro, quando não há narração).
+export const MarcasCena = React.createContext<number[]>([]);
+
+// Retorna m(i, ajuste): quadro em que a i-ésima legenda da cena começa.
+// m(i + 0.5) cai no meio do trecho i (útil para palavras no fim da frase).
+export const useMarcas = () => {
+	const marcas = React.useContext(MarcasCena);
+	const {durationInFrames} = useVideoConfig();
+	return (i: number, ajuste = 0) => {
+		const base = Math.floor(i);
+		const fr = i - base;
+		const a = marcas[base] ?? 0;
+		const b = marcas[base + 1] ?? durationInFrames - 30;
+		return Math.round(a + (b - a) * fr + ajuste);
+	};
+};

@@ -1,7 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, interpolate, random, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import {CANAL, CORES, FONTES} from '../config';
-import {janela, progresso, useTempoCena} from '../anim';
+import {janela, progresso, useMarcas} from '../anim';
 import {KenBurns} from '../components/KenBurns';
 import {Recorte} from '../components/Recorte';
 import {Pessoa} from '../components/Icones';
@@ -14,9 +14,9 @@ const CORES_PESSOAS = [CORES.azul, CORES.preto, CORES.azulClaro, CORES.begeEscur
 export const Cena7Fechamento: React.FC = () => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
-	const t = useTempoCena();
-	const fimA = t(0.5);
-	const iniB = t(0.48);
+	const m = useMarcas();
+	const fimA = m(3, 10);
+	const iniB = m(3, -6);
 	const centro = {c: 7, l: 2};
 
 	return (
@@ -25,12 +25,12 @@ export const Cena7Fechamento: React.FC = () => {
 			<AbsoluteFill style={{opacity: janela(frame, -12, fimA)}}>
 				<KenBurns zoom={[1.12, 1.0]} origem="50% 60%">
 					<div style={{position: 'absolute', top: 90, width: '100%', textAlign: 'center', fontFamily: FONTES.titulo, fontSize: 84, color: CORES.preto}}>
-						<span style={{opacity: janela(frame, 0, t(0.17))}}>
-							Um voto entre <MarcaTexto inicio={t(0.06)}>milhões</MarcaTexto>
+						<span style={{opacity: janela(frame, 0, m(1))}}>
+							Um voto entre <MarcaTexto inicio={m(0.6)}>milhões</MarcaTexto>
 						</span>
 					</div>
-					<div style={{position: 'absolute', top: 90, width: '100%', textAlign: 'center', fontFamily: FONTES.titulo, fontSize: 76, color: CORES.preto, opacity: janela(frame, t(0.17), t(0.6))}}>
-						<MarcaTexto inicio={t(0.2)}>milhões de escolhas</MarcaTexto> conscientes
+					<div style={{position: 'absolute', top: 90, width: '100%', textAlign: 'center', fontFamily: FONTES.titulo, fontSize: 76, color: CORES.preto, opacity: janela(frame, m(1), fimA + 30)}}>
+						<MarcaTexto inicio={m(1.3)}>milhões de escolhas</MarcaTexto> conscientes
 					</div>
 					<div style={{position: 'absolute', left: 150, top: 250, width: 1620, height: 560}}>
 						{Array.from({length: COLS * LINHAS}).map((_, i) => {
@@ -38,7 +38,7 @@ export const Cena7Fechamento: React.FC = () => {
 							const l = Math.floor(i / COLS);
 							const eu = c === centro.c && l === centro.l;
 							const dist = Math.hypot(c - centro.c, (l - centro.l) * 1.6);
-							const atraso = eu ? 4 : t(0.14) + dist * 3 + random(`p${i}`) * 6;
+							const atraso = eu ? 4 : m(0.7) + dist * 3 + random(`p${i}`) * 6;
 							const e = spring({frame: frame - atraso, fps, config: {damping: 12, mass: 0.6}});
 							return (
 								<div
@@ -61,7 +61,7 @@ export const Cena7Fechamento: React.FC = () => {
 			</AbsoluteFill>
 
 			{/* Parte B: chamada final */}
-			<AbsoluteFill style={{opacity: janela(frame, iniB, t(1) + 40)}}>
+			<AbsoluteFill style={{opacity: janela(frame, iniB, 99999)}}>
 				<KenBurns zoom={[1.0, 1.04]}>
 					<div style={{position: 'absolute', top: 130, width: '100%', display: 'flex', justifyContent: 'center', gap: 50}}>
 						{['Informe-se.', 'Converse.', 'Vote.'].map((p, i) => (
@@ -72,7 +72,7 @@ export const Cena7Fechamento: React.FC = () => {
 							</div>
 						))}
 					</div>
-					<Inscricao inicio={t(0.68)} clique={t(0.84)} />
+					<Inscricao inicio={m(4)} clique={m(5.5)} />
 				</KenBurns>
 			</AbsoluteFill>
 		</AbsoluteFill>
@@ -92,7 +92,7 @@ const Inscricao: React.FC<{inicio: number; clique: number}> = ({inicio, clique})
 					<div style={{width: 120, height: 120, borderRadius: 60, background: CORES.amarelo, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: FONTES.titulo, fontSize: 56, color: CORES.preto, flexShrink: 0}}>
 						{CANAL.nome.split(' ').map((p) => p[0]).join('').slice(0, 2)}
 					</div>
-					<div style={{flex: 1, fontFamily: FONTES.titulo, fontSize: 60, color: CORES.papel}}>{CANAL.nome}</div>
+					<div style={{flex: 1, fontFamily: FONTES.titulo, fontSize: 60, color: CORES.papel, whiteSpace: 'nowrap'}}>{CANAL.nome}</div>
 					<div
 						style={{
 							padding: '18px 30px',

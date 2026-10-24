@@ -1,7 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, useCurrentFrame} from 'remotion';
 import {CORES, FONTES} from '../config';
-import {progresso, useTempoCena} from '../anim';
+import {progresso, useMarcas} from '../anim';
 import {KenBurns} from '../components/KenBurns';
 import {Titulo} from '../components/Titulo';
 import {Recorte} from '../components/Recorte';
@@ -12,18 +12,18 @@ const URL = 'divulgacandcontas.tse.jus.br';
 
 export const Cena4Pesquisar: React.FC = () => {
 	const frame = useCurrentFrame();
-	const t = useTempoCena();
+	const m = useMarcas();
 
 	const itens = [
-		{texto: 'Bens declarados', em: t(0.29)},
-		{texto: 'Certidões criminais', em: t(0.37)},
-		{texto: 'Contas da campanha', em: t(0.46)},
-		{texto: 'Plano de governo (executivo)', em: t(0.55)},
-		{texto: 'O que já fez', em: t(0.71), historico: true},
-		{texto: 'Como votou', em: t(0.78), historico: true},
-		{texto: 'Prometeu × cumpriu', em: t(0.85), historico: true},
+		{texto: 'Bens declarados', em: m(2.3)},
+		{texto: 'Certidões criminais', em: m(2.65)},
+		{texto: 'Contas da campanha', em: m(3, 4)},
+		{texto: 'Plano de governo (executivo)', em: m(4.4)},
+		{texto: 'O que já fez', em: m(5.55), historico: true},
+		{texto: 'Como votou', em: m(6, 2), historico: true},
+		{texto: 'Prometeu × cumpriu', em: m(6.45), historico: true},
 	];
-	const letras = Math.round(progresso(frame, t(0.11), t(0.22)) * URL.length);
+	const letras = Math.round(progresso(frame, m(1, 4), m(1, 44)) * URL.length);
 
 	return (
 		<AbsoluteFill>
@@ -31,7 +31,7 @@ export const Cena4Pesquisar: React.FC = () => {
 				<Titulo texto="Como pesquisar um candidato" inicio={4} />
 
 				{/* Navegador recortado com a ficha genérica */}
-				<Recorte seed="navegador" inicio={t(0.08)} rotacao={-1.5} style={{left: 120, top: 210, width: 820, height: 480}} padding={0}>
+				<Recorte seed="navegador" inicio={m(1, -14)} rotacao={-1.5} style={{left: 120, top: 210, width: 820, height: 480}} padding={0}>
 					<div style={{background: CORES.preto, height: 64, display: 'flex', alignItems: 'center', padding: '0 22px', gap: 12}}>
 						{[CORES.amarelo, CORES.azulClaro, CORES.papel].map((c) => (
 							<span key={c} style={{width: 18, height: 18, borderRadius: 9, background: c}} />
@@ -41,7 +41,7 @@ export const Cena4Pesquisar: React.FC = () => {
 							<span style={{opacity: frame % 20 < 10 && letras < URL.length ? 1 : 0}}>|</span>
 						</div>
 					</div>
-					<div style={{display: 'flex', padding: 34, gap: 30, opacity: progresso(frame, t(0.22), t(0.26))}}>
+					<div style={{display: 'flex', padding: 34, gap: 30, opacity: progresso(frame, m(1, 44), m(1, 56))}}>
 						<div style={{width: 190, height: 230, background: CORES.begeEscuro, display: 'flex', alignItems: 'flex-end', justifyContent: 'center', overflow: 'hidden', border: `4px solid ${CORES.preto}`}}>
 							<Pessoa tamanho={170} cor={CORES.azulClaro} />
 						</div>
@@ -53,7 +53,7 @@ export const Cena4Pesquisar: React.FC = () => {
 							))}
 						</div>
 					</div>
-					<div style={{display: 'flex', gap: 14, padding: '0 34px', opacity: progresso(frame, t(0.26), t(0.3))}}>
+					<div style={{display: 'flex', gap: 14, padding: '0 34px', opacity: progresso(frame, m(1, 56), m(1, 68))}}>
 						{['Bens', 'Certidões', 'Contas', 'Propostas'].map((aba, i) => (
 							<div key={aba} style={{fontFamily: FONTES.texto, fontWeight: 800, fontSize: 24, padding: '8px 16px', border: `3px solid ${CORES.preto}`, background: i === 0 ? CORES.amarelo : CORES.papel}}>
 								{aba}
@@ -61,7 +61,7 @@ export const Cena4Pesquisar: React.FC = () => {
 						))}
 					</div>
 				</Recorte>
-				<Fonte texto="DIVULGACANDCONTAS.TSE.JUS.BR (TSE)" inicio={t(0.12)} style={{left: 130, top: 730}} />
+				<Fonte texto="DIVULGACANDCONTAS.TSE.JUS.BR (TSE)" inicio={m(1, 10)} style={{left: 130, top: 730}} />
 
 				{/* Checklist */}
 				<div style={{position: 'absolute', left: 1030, top: 185, width: 780}}>
@@ -71,7 +71,7 @@ export const Cena4Pesquisar: React.FC = () => {
 						return (
 							<React.Fragment key={it.texto}>
 								{it.historico && !itens[i - 1].historico ? (
-									<div style={{fontFamily: FONTES.mao, fontWeight: 700, fontSize: 44, color: CORES.azul, margin: '10px 0 4px', opacity: progresso(frame, t(0.68), t(0.72))}}>
+									<div style={{fontFamily: FONTES.mao, fontWeight: 700, fontSize: 44, color: CORES.azul, margin: '10px 0 4px', opacity: progresso(frame, m(5, 6), m(5, 18))}}>
 										…e o histórico:
 									</div>
 								) : null}

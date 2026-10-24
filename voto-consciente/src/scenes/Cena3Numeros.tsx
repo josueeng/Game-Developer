@@ -1,7 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, useCurrentFrame} from 'remotion';
 import {CORES, FONTES} from '../config';
-import {janela, progresso, useTempoCena} from '../anim';
+import {janela, progresso, useMarcas, useTempoCena} from '../anim';
 import {KenBurns} from '../components/KenBurns';
 import {Titulo} from '../components/Titulo';
 import {Recorte} from '../components/Recorte';
@@ -21,15 +21,16 @@ const MAPA = {x: 130, y: 165, w: 720, h: 665};
 export const Cena3Numeros: React.FC = () => {
 	const frame = useCurrentFrame();
 	const t = useTempoCena();
-	const fimA = t(0.45);
-	const iniB = t(0.43);
-	const fimB = t(0.83);
-	const iniC = t(0.81);
+	const m = useMarcas();
+	const fimA = m(5, 10);
+	const iniB = m(5, -6);
+	const fimB = m(8, 10);
+	const iniC = m(8, -6);
 
 	const estados = [
-		{uf: 'SP', nome: 'São Paulo', valor: '34.104.226', cor: CORES.amarelo, inicio: t(0.19)},
-		{uf: 'MG', nome: 'Minas Gerais', valor: '16.377.659', cor: CORES.azul, inicio: t(0.28)},
-		{uf: 'RR', nome: 'Roraima', valor: '~401 mil', cor: CORES.amarelo, inicio: t(0.36)},
+		{uf: 'SP', nome: 'São Paulo', valor: '34.104.226', cor: CORES.amarelo, inicio: m(2, 6)},
+		{uf: 'MG', nome: 'Minas Gerais', valor: '16.377.659', cor: CORES.azul, inicio: m(3, 4)},
+		{uf: 'RR', nome: 'Roraima', valor: '~401 mil', cor: CORES.amarelo, inicio: m(4, 4)},
 	];
 
 	return (
@@ -63,11 +64,11 @@ export const Cena3Numeros: React.FC = () => {
 					</div>
 					<Titulo texto="Os números" inicio={2} x={110} y={60} />
 					<div style={{position: 'absolute', left: 960, top: 120, width: 860}}>
-						<div style={{fontFamily: FONTES.titulo, fontSize: 120, color: CORES.preto, lineHeight: 1, opacity: progresso(frame, t(0.06), t(0.07))}}>
-							<Numero para={158.7} inicio={t(0.06)} duracao={40} casas={1} /> mi
+						<div style={{fontFamily: FONTES.titulo, fontSize: 120, color: CORES.preto, lineHeight: 1, opacity: progresso(frame, m(1, 10), m(1, 16))}}>
+							<Numero para={158.7} inicio={m(1, 10)} duracao={40} casas={1} /> mi
 						</div>
-						<div style={{fontFamily: FONTES.texto, fontWeight: 800, fontSize: 44, color: CORES.preto, marginTop: 10, opacity: progresso(frame, t(0.07), t(0.09))}}>
-							de <MarcaTexto inicio={t(0.09)}>eleitores aptos</MarcaTexto> em 2026
+						<div style={{fontFamily: FONTES.texto, fontWeight: 800, fontSize: 44, color: CORES.preto, marginTop: 10, opacity: progresso(frame, m(1, 20), m(1, 32))}}>
+							de <MarcaTexto inicio={m(1, 40)}>eleitores aptos</MarcaTexto> em 2026
 						</div>
 					</div>
 					{estados.map((e, i) => (
@@ -79,7 +80,7 @@ export const Cena3Numeros: React.FC = () => {
 							</div>
 						</Recorte>
 					))}
-					<Fonte texto="TSE — ELEITORADO APTO, ELEIÇÕES 2026" inicio={t(0.08)} style={{left: 965, top: 760}} />
+					<Fonte texto="TSE — ELEITORADO APTO, ELEIÇÕES 2026" inicio={m(1, 20)} style={{left: 965, top: 760}} />
 					<Fonte texto="MALHA: IBGE (GIS-DATASET-BRASIL)" inicio={20} style={{left: 965, top: 798, fontSize: 16}} />
 				</KenBurns>
 			</AbsoluteFill>

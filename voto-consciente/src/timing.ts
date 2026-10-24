@@ -8,8 +8,11 @@ export const DURACOES_PADRAO = ROTEIRO.map((c) => Math.round(c.duracaoSegundos *
 
 // Formato de public/narracao-tempos.json (opcional, criado depois de ouvir a
 // narração): segundo em que cada cena começa e segundo em que o vídeo termina.
-//   { "inicios": [0, 17.4, 42.9, ...], "fim": 168.2 }
-export type TemposNarracao = {inicios: number[]; fim: number};
+// `legendas` (opcional) traz o tempo exato de cada trecho de legenda, na ordem
+// de src/roteiro.ts.
+//   { "inicios": [0, 17.4, 42.9, ...], "fim": 168.2, "legendas": [{"de": 0.5, "ate": 2.1}, ...] }
+export type TempoLegenda = {de: number; ate: number};
+export type TemposNarracao = {inicios: number[]; fim: number; legendas?: TempoLegenda[]};
 
 export const duracoesDeTempos = (t: TemposNarracao): number[] =>
 	t.inicios.map((ini, i) => {
@@ -38,8 +41,20 @@ export const inicios = (duracoes: number[]): number[] => {
 export type Legenda = {texto: string; de: number; ate: number};
 
 // Distribui as legendas de cada cena pelo tempo da cena, proporcional ao
-// número de caracteres de cada trecho.
-export const calcularLegendas = (duracoes: number[]): Legenda[] => {
+// número de caracteres de cada trecho. Se houver tempos medidos na narração
+// (em segundos), usa esses tempos.
+export const calcularLegendas = (duracoes: number[], tempos?: TempoLegenda[] | null): Legenda[] => {
+	const textos = ROTEIRO.flatMap((c) => c.legendas);
+	if (tempos && tempos.length === textos.length) {
+		// Pausas curtas entre frases não apagam a legenda (evita "piscar").
+		return textos.map((texto, i) => {
+			const de = Math.round(tempos[i].de * FPS);
+			let ate = Math.round(tempos[i].ate * FPS);
+			const prox = tempos[i + 1] ? Math.round(tempos[i + 1].de * FPS) : null;
+			if (prox !== null && prox - ate < 20) ate = prox - 1;
+			return {texto, de, ate};
+		});
+	}
 	const ini = inicios(duracoes);
 	const out: Legenda[] = [];
 	ROTEIRO.forEach((cena, i) => {

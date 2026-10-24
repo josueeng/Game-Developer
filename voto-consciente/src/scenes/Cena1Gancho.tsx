@@ -1,7 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, interpolate, useCurrentFrame} from 'remotion';
 import {CORES, FONTES} from '../config';
-import {janela, progresso, useTempoCena} from '../anim';
+import {janela, progresso, useMarcas, useTempoCena} from '../anim';
 import {KenBurns} from '../components/KenBurns';
 import {Numero} from '../components/Numero';
 import {Fonte} from '../components/Fonte';
@@ -18,10 +18,11 @@ const ELEITORADO_SP = 34_104_226;
 export const Cena1Gancho: React.FC = () => {
 	const frame = useCurrentFrame();
 	const t = useTempoCena();
-	const fimA = t(0.42);
-	const iniB = t(0.4);
-	const fimB = t(0.76);
-	const iniC = t(0.74);
+	const m = useMarcas(); // m(i): início da legenda i desta cena (ver roteiro.ts)
+	const fimA = m(2, 10);
+	const iniB = m(2, -6);
+	const fimB = m(4, 6);
+	const iniC = m(4);
 
 	return (
 		<AbsoluteFill>

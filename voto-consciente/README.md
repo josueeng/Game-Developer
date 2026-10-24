@@ -15,6 +15,26 @@ npm run tempos      # (com narração) detecta as pausas e ajusta as cenas
 
 ## Narração
 
+O vídeo já inclui uma **narração sintética provisória** (voz neural Kokoro,
+voz `pf_dora`, pt-BR), gerada por `scripts/gerar-narracao.py` a partir das
+legendas de `src/roteiro.ts`. O script também grava `public/narracao-tempos.json`
+com o início de cada cena e o tempo exato de cada legenda. As animações-chave
+de cada cena estão presas ao início das legendas (`useMarcas()` em
+`src/anim.ts`), então tudo acompanha a voz.
+
+Para regenerar (ex.: outra voz `pm_alex` / `pm_santa`, ou outra velocidade):
+
+```bash
+python3 -m venv venv && ./venv/bin/pip install kokoro-onnx soundfile
+# baixe kokoro-v1.0.onnx e voices-v1.0.bin de
+# https://github.com/thewh1teagle/kokoro-onnx/releases/tag/model-files-v1.0
+./venv/bin/python scripts/gerar-narracao.py --modelo PASTA_DO_MODELO --voz pf_dora --velocidade 0.9
+npm run render
+```
+
+### Trocar pela sua voz
+
+
 1. Grave seguindo `roteiro_narracao.md`, com ~0,5 s de silêncio entre as cenas.
 2. Salve como `public/narracao.mp3`.
 3. Rode `npm run tempos`. O script cria `public/narracao-tempos.json` com o

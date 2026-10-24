@@ -5,7 +5,9 @@ import {fade} from '@remotion/transitions/fade';
 import {slide} from '@remotion/transitions/slide';
 import {FundoPapel} from './components/FundoPapel';
 import {Legendas} from './components/Legendas';
-import {TRANSICAO, calcularLegendas} from './timing';
+import {TRANSICAO, calcularLegendas, inicios, type TempoLegenda} from './timing';
+import {MarcasCena} from './anim';
+import {ROTEIRO} from './roteiro';
 import {Cena1Gancho} from './scenes/Cena1Gancho';
 import {Cena2Decide} from './scenes/Cena2Decide';
 import {Cena3Numeros} from './scenes/Cena3Numeros';
@@ -17,6 +19,7 @@ import {Cena7Fechamento} from './scenes/Cena7Fechamento';
 export type VideoProps = {
 	temNarracao: boolean;
 	duracoes: number[]; // quadros por cena
+	temposLegendas?: TempoLegenda[] | null; // segundos, medidos na narração
 };
 
 const CENAS = [Cena1Gancho, Cena2Decide, Cena3Numeros, Cena4Pesquisar, Cena5Desinformacao, Cena6Crime, Cena7Fechamento];
@@ -31,9 +34,15 @@ const TRANSICOES = [
 	slide({direction: 'from-right'}),
 ];
 
-export const Video: React.FC<VideoProps> = ({temNarracao, duracoes}) => {
+export const Video: React.FC<VideoProps> = ({temNarracao, duracoes, temposLegendas}) => {
 	const {durationInFrames} = useVideoConfig();
-	const legendas = useMemo(() => calcularLegendas(duracoes), [duracoes]);
+	const legendas = useMemo(() => calcularLegendas(duracoes, temposLegendas), [duracoes, temposLegendas]);
+	// Para cada cena, o quadro (relativo à cena) em que cada legenda começa.
+	const marcas = useMemo(() => {
+		const ini = inicios(duracoes);
+		let k = 0;
+		return ROTEIRO.map((cena, i) => cena.legendas.map(() => legendas[k++].de - ini[i]));
+	}, [duracoes, legendas]);
 
 	return (
 		<AbsoluteFill>
@@ -46,7 +55,9 @@ export const Video: React.FC<VideoProps> = ({temNarracao, duracoes}) => {
 					return (
 						<React.Fragment key={i}>
 							<TransitionSeries.Sequence durationInFrames={dur}>
-								<Cena />
+								<MarcasCena.Provider value={marcas[i]}>
+									<Cena />
+								</MarcasCena.Provider>
 							</TransitionSeries.Sequence>
 							{i < CENAS.length - 1 ? (
 								<TransitionSeries.Transition presentation={TRANSICOES[i]} timing={linearTiming({durationInFrames: TRANSICAO})} />

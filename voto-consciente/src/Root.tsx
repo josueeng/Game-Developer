@@ -25,17 +25,19 @@ const existe = async (arquivo: string) => {
 // 3. só com a narração → cenas esticadas proporcionalmente ao áudio.
 const calcularMetadados = async (): Promise<{durationInFrames: number; props: VideoProps}> => {
 	let duracoes = DURACOES_PADRAO;
+	let temposLegendas: VideoProps['temposLegendas'] = null;
 	const temNarracao = await existe('narracao.mp3');
 	if (temNarracao) {
 		if (await existe('narracao-tempos.json')) {
 			const tempos = (await (await fetch(staticFile('narracao-tempos.json'))).json()) as TemposNarracao;
 			duracoes = duracoesDeTempos(tempos);
+			temposLegendas = tempos.legendas ?? null;
 		} else {
 			const segundos = await getAudioDurationInSeconds(staticFile('narracao.mp3'));
 			duracoes = duracoesProporcionais(Math.ceil((segundos + 1.5) * FPS));
 		}
 	}
-	return {durationInFrames: duracoes.reduce((a, b) => a + b, 0), props: {temNarracao, duracoes}};
+	return {durationInFrames: duracoes.reduce((a, b) => a + b, 0), props: {temNarracao, duracoes, temposLegendas}};
 };
 
 export const RemotionRoot: React.FC = () => (
