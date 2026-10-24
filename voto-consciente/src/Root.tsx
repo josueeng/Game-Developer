@@ -5,6 +5,7 @@ import {ALTURA, FPS, LARGURA} from './config';
 import {carregarFontes} from './fontes';
 import {Video, type VideoProps} from './Video';
 import {Thumbnail} from './Thumbnail';
+import {ThumbnailViral} from './ThumbnailViral';
 import {DURACOES_PADRAO, duracoesDeTempos, duracoesProporcionais, type TemposNarracao} from './timing';
 
 const esperaFontes = delayRender('Carregando fontes');
@@ -52,6 +53,7 @@ export const RemotionRoot: React.FC = () => (
 			defaultProps={{temNarracao: false, duracoes: DURACOES_PADRAO} satisfies VideoProps}
 			calculateMetadata={calcularMetadados}
 		/>
-		<Still id="Thumbnail" component={Thumbnail} width={1280} height={720} />
+		<Still id="Thumbnail" component={ThumbnailViral} width={1280} height={720} />
+		<Still id="ThumbnailClassica" component={Thumbnail} width={1280} height={720} />
 	</>
 );
