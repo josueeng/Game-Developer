@@ -1,7 +1,7 @@
 # R$ 30 bilhões por mês: para onde ia o dinheiro das bets?
 
 Canal: Viralmente Viral · 1920x1080, 30 fps · ~2min40s · apartidário
-Duração estimada: **2min40s** (~370 palavras, mesma voz e ritmo do vídeo anterior).
+Duração final com a narração sintética: **2min34s**.
 
 **Título proposto:** *Os brasileiros mandavam R$ 30 bilhões por mês para as bets. Para onde foi esse dinheiro?*
 
@@ -12,29 +12,30 @@ Duração estimada: **2min40s** (~370 palavras, mesma voz e ritmo do vídeo ante
 
 | # | Cena | Duração |
 |---|------|---------|
-| 1 | Gancho | 16 s |
-| 2 | Para onde ia o dinheiro | 24 s |
-| 3 | Por que a casa sempre ganha | 32 s |
-| 4 | O tamanho do mercado | 24 s |
-| 5 | A proibição | 26 s |
-| 6 | E agora? | 22 s |
-| 7 | Fechamento | 16 s |
+| 1 | Gancho | 19 s |
+| 2 | Para onde ia o dinheiro | 21 s |
+| 3 | Por que a casa sempre ganha | 28 s |
+| 4 | O tamanho do mercado | 22 s |
+| 5 | A proibição | 29 s |
+| 6 | E agora? | 16 s |
+| 7 | Fechamento | 19 s |
 
 ---
 
-## Cena 1: Gancho (16 s)
+## Cena 1: Gancho (19 s)
 
 > Até poucas semanas atrás, os brasileiros mandavam até 30 bilhões de reais
 > por mês para sites de apostas.
 > Aí, em outubro, tudo saiu do ar.
 > Mas a pergunta que quase ninguém fez é: para onde ia esse dinheiro?
+> E fica até o final: tem um golpe novo circulando.
 
 **Na tela:** contador "R$ 30.000.000.000 / mês" girando rápido; celular de
 aposta recortado com tela "ACESSO BLOQUEADO"; recorte de jornal
 "Bets saem do ar" com marca-texto.
 _Fonte: Banco Central, CPI das Bets (abr/2025) · MP nº 1.394/2026._
 
-## Cena 2: Para onde ia o dinheiro (24 s)
+## Cena 2: Para onde ia o dinheiro (21 s)
 
 > Primeiro, um detalhe que muda tudo: esses 30 bilhões não eram perda.
 > A maior parte voltava para os próprios apostadores, em prêmios.
@@ -46,7 +47,7 @@ _Fonte: Banco Central, CPI das Bets (abr/2025) · MP nº 1.394/2026._
 caem no cofre da "casa" (amarelo). Barra empilhada 93% / 7%.
 _Fonte: SPA/Ministério da Fazenda, citado pelo presidente do BC na CPI das Bets (08/04/2025)._
 
-## Cena 3: Por que a casa sempre ganha (32 s)
+## Cena 3: Por que a casa sempre ganha (28 s)
 
 > Sete por cento parece pouco. O truque é que o prêmio quase nunca sai do
 > jogo: quem ganha, aposta de novo.
@@ -61,7 +62,7 @@ coroa recortado: "num jogo justo pagaria 2x; a casa paga 1,86x". Selo "a casa
 sempre ganha" carimbado.
 _Cálculo: 100 × 0,93ⁿ (média esperada) · retorno de 93% (SPA/MF)._
 
-## Cena 4: O tamanho do mercado (24 s)
+## Cena 4: O tamanho do mercado (22 s)
 
 > E não era pouca gente.
 > Só no primeiro semestre de 2025, 17,7 milhões de brasileiros apostaram em
@@ -73,7 +74,7 @@ _Cálculo: 100 × 0,93ⁿ (média esperada) · retorno de 93% (SPA/MF)._
 "17,7 milhões" · "R$ 17,4 bi" · "R$ 164/mês por pessoa".
 _Fonte: Ministério da Fazenda (SPA), panorama do 1º semestre de 2025._
 
-## Cena 5: A proibição (26 s)
+## Cena 5: A proibição (29 s)
 
 > Em 25 de setembro de 2026, o governo federal publicou uma medida provisória
 > que proíbe as apostas online e os jogos de cassino na internet, inclusive a
@@ -87,7 +88,7 @@ _Fonte: Ministério da Fazenda (SPA), panorama do 1º semestre de 2025._
 com marca-texto; contador "R$ 1,3 bi".
 _Fontes: MP nº 1.394/2026 · Agência Brasil / Ministério da Fazenda (out/2026)._
 
-## Cena 6: E agora? (22 s)
+## Cena 6: E agora? (16 s)
 
 > Mas a história não acabou.
 > Medida provisória vale na hora, mas precisa ser aprovada pelo Congresso,
@@ -99,7 +100,7 @@ _Fontes: MP nº 1.394/2026 · Agência Brasil / Ministério da Fazenda (out/2026
 interrogação; alerta "PEDIU PIX PARA LIBERAR SALDO? É GOLPE" carimbado.
 _Fontes: Congresso Nacional (tramitação da MPV 1.394/2026) · Agência Brasil._
 
-## Cena 7: Fechamento (16 s)
+## Cena 7: Fechamento (19 s)
 
 > No fim, a matemática é simples: no longo prazo, quem aposta paga a conta.
 > Se a aposta virou problema para você ou alguém próximo, procure o CAPS da

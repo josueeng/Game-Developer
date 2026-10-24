@@ -192,3 +192,53 @@ do zoom.
       número.
 - [ ] Lembrar a licença do Remotion: gratuita só para pessoas físicas e
       empresas de até 3 pessoas.
+
+---
+
+# Vídeo 2: "R$ 30 bilhões por mês: para onde ia o dinheiro das bets?" (`../bets-30-bilhoes`)
+
+## O que funcionou
+- **Checar a premissa do pedido.** O título sugerido ("os brasileiros
+  *perdem* R$ 30 bi por mês") era falso: R$ 30 bi é o valor **enviado**; 93–94%
+  volta em prêmios e a perda real (GGR) é ~R$ 2,9 bi/mês. Corrigir isso virou
+  o melhor trecho do vídeo ("por que a casa sempre ganha").
+- **Pesquisar o estado atual antes de roteirizar.** A busca revelou a MP nº
+  1.394/2026 (proibição das bets, sites fora do ar em 06/10/2026), que mudou
+  o vídeo inteiro e o deixou muito mais atual.
+- **Cálculo próprio explicado na tela.** 100 × 0,93ⁿ (10 rodadas ≈ 48;
+  20 ≈ 23) mostra a ideia sem precisar de dado extra, com a fórmula na fonte.
+- **Curiosidade em aberto no gancho** ("fica até o final: tem um golpe novo
+  circulando"), paga na cena 6 (golpe da "taxa de liberação de saldo").
+- **Conferência por legenda:** um still no meio de **cada** legenda (48 quadros
+  em meia resolução, ~3 min) pegou todos os problemas de sincronia e layout
+  antes do render completo.
+- **Reaproveitar a base:** copiar o projeto (sem `node_modules`/`out`),
+  `npm ci`, trocar `roteiro.ts`, cenas, `Video.tsx` e `Root.tsx`. No contêiner
+  não há `rsync`; usar `cp`.
+
+## Dados: o que entrou e o que ficou de fora
+- Entrou: BC na CPI (R$ 20–30 bi/mês, jan–mar/2025); retorno de 93–94% (SPA/MF
+  citado pelo presidente do BC); SPA 1º sem. 2025 (17,7 mi apostadores, GGR
+  R$ 17,4 bi, R$ 164/mês); MP 1.394/2026; devolução de R$ 1,3 bi para 26,5 mi
+  de contas (Agência Brasil); "9 em 10 contas com menos de R$ 1" (dado das
+  empresas, dito assim na tela).
+- Ficou de fora: R$ 30 bi+ de 2026 (CNC, setorial), R$ 3 bi do Bolsa Família
+  (metodologia do BC contestada), números de consultorias, debate eleitoral.
+
+## Erros de layout desta vez (e correções)
+| Erro | Correção |
+|---|---|
+| Moedas "caíam" no cofre mas sumiam | o cofre era desenhado **depois** das moedas; a ordem no JSX é a ordem de empilhamento. Desenhar o cofre antes. |
+| "R$ 2,00" quebrava em "R$" / "2,00" | `whiteSpace: 'nowrap'` em todo valor monetário |
+| Card "R$ 1,3 bi" mostrava "0,0 milhões" antes da narração | `Numero` mostra 0 antes de começar: esconder (opacity) até a marca da legenda |
+| Balões "GANHEI!" cobriam a fileira de cima | vencedores na primeira fileira |
+| Último marco da linha do tempo saía da tela | posições até 0,90, não 0,95 |
+| Frase final colada na borda direita | fonte menor (70→60); o zoom inicial do Ken Burns amplia |
+| "R$" espelhado na moeda girando | `scaleX = |cos|` em vez de `cos` |
+| Texto "CASA" estourando a moeda | tamanho da fonte da `Moeda` depende do comprimento do texto |
+
+## Componentes novos (copiar para os próximos vídeos)
+- `components/Personagem.tsx`: personagem genérico espantado (thumbnail).
+- `MapaBrasil.pontosNoMapa()`: pontos aleatórios dentro do território
+  (`geoContains`), marcados na tela como "pontos ilustrativos".
+- `Icones`: `Moeda`, `IconeAlerta`, `IconeInterrogacao`.

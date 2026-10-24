@@ -1,9 +1,13 @@
 # Notas do repositório
 
-## voto-consciente/ (vídeos do canal com Remotion)
+## Vídeos do canal Viralmente Viral (Remotion)
+
+Cada vídeo é um projeto próprio: `voto-consciente/` (vídeo 1) e
+`bets-30-bilhoes/` (vídeo 2). Para um vídeo novo, copie o projeto mais recente
+(sem `node_modules`/`out`) e troque roteiro e cenas.
 
 Leia `voto-consciente/APRENDIZADOS.md` antes de criar ou editar vídeos: ele
-registra o processo, os erros e as soluções do primeiro vídeo.
+registra o processo, os erros e as soluções dos vídeos já feitos.
 
 Regras rápidas:
 - Fluxo: pesquisar em fonte oficial → roteiro (`src/roteiro.ts` +
@@ -21,3 +25,7 @@ Regras rápidas:
 - Confira stills em meia resolução antes do render completo (~7 min) e
   extraia quadros do MP4 final para checar a sincronia.
 - Rode `npx tsc --noEmit` depois de cada lote de edições.
+- Cheque a premissa do pedido (ex.: "perdem R$ 30 bi" era "enviam") e
+  pesquise o estado atual do tema antes do roteiro.
+- Valores monetários sempre com `whiteSpace: 'nowrap'`; contadores escondidos
+  até a legenda que os cita.
