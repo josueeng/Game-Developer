@@ -242,3 +242,38 @@ do zoom.
 - `MapaBrasil.pontosNoMapa()`: pontos aleatórios dentro do território
   (`geoContains`), marcados na tela como "pontos ilustrativos".
 - `Icones`: `Moeda`, `IconeAlerta`, `IconeInterrogacao`.
+
+---
+
+# Vídeo 3: "Para onde vai cada real que você paga na gasolina?" (`../gasolina`)
+
+## O que funcionou
+- **Somar antes de acreditar.** As primeiras parcelas encontradas (Petrobras
+  R$ 1,83 de maio etc.) davam bem menos que R$ 6,53. Só a composição de
+  out/2026 da Petrobras (2,08 + 1,83 + 1,57 + 0,99 + 0,06 = 6,53; 31,9 + 28 + 24
+  + 15,2 + 0,9 = 100%) fechou a conta. Regra: se as parcelas não somam o total,
+  algum número está desatualizado.
+- **Contexto que muda rápido:** em 2026 a política de combustíveis mudou várias
+  vezes (subvenção de R$ 0,44 em maio → corte de R$ 0,63 em setembro → PIS,
+  Cofins e Cide zerados de 10/10 a 09/11). Pesquisar a cronologia até a data
+  de hoje antes de escrever.
+- **A curiosidade em aberto virou uma data real** ("a data de novembro que pode
+  mudar o preço"), sem opinião política.
+- **Pronúncia:** "ICMS" saía como uma palavra só e "Petrobras" com a tônica
+  errada. A tabela `PRONUNCIA` usa "i cê ême ésse" e "Petrobrás" só no áudio.
+
+## Erros de layout desta vez (e correções)
+| Erro | Correção |
+|---|---|
+| "R$ 6,53" estourando o visor da bomba | fonte 56→40 |
+| Fatia "destacada" da rosca cortada na borda | `overflow: 'visible'` no `<svg>` |
+| Créditos de fonte longos saindo pela direita | textos de fonte com no máximo ~45 caracteres quando começam depois de x ≈ 1000 |
+| Caminhão passando por cima dos nomes das etapas | nomes mais abaixo (o caminhão anda na linha) |
+| "R$ 6,53" maior que o miolo da rosca | fonte 64→38 |
+| Usei "≠" (não existe no subset latin) | sinal desenhado em SVG. A regra do `CLAUDE.md` existe por isso: conferir glifos antes |
+
+## Componentes novos
+- `components/Gasolina.tsx`: `Pizza` (rosca com fatias que entram e se
+  destacam), `Bomba`, `Barril`, `Bequer`, `Calendario`, `Caminhao`, ícones das
+  etapas e `EtiquetaCidade` (preço sem número, quando não há fonte oficial).
+- `components/Inscricao.tsx`: card de inscrição extraído para reutilizar.

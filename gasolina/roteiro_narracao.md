@@ -1,10 +1,10 @@
 # Para onde vai cada real que você paga na gasolina?
 
-Canal: Viralmente Viral · 1920x1080, 30 fps · ~2min30s · apartidário
+Canal: Viralmente Viral · 1920x1080, 30 fps · 2min25s (narração sintética) · apartidário
 
 **Título proposto:** *Você paga R$ 6,53 no litro. Só R$ 2 ficam com a Petrobras. Para onde vai o resto?*
 
-| # | Cena | Duração estimada |
+| # | Cena | Duração prevista |
 |---|------|---------|
 | 1 | Gancho | 16 s |
 | 2 | Cada real do litro | 26 s |

@@ -2,8 +2,8 @@
 
 ## Vídeos do canal Viralmente Viral (Remotion)
 
-Cada vídeo é um projeto próprio: `voto-consciente/` (vídeo 1) e
-`bets-30-bilhoes/` (vídeo 2). Para um vídeo novo, copie o projeto mais recente
+Cada vídeo é um projeto próprio: `voto-consciente/` (vídeo 1),
+`bets-30-bilhoes/` (vídeo 2) e `gasolina/` (vídeo 3). Para um vídeo novo, copie o projeto mais recente
 (sem `node_modules`/`out`) e troque roteiro e cenas.
 
 Leia `voto-consciente/APRENDIZADOS.md` antes de criar ou editar vídeos: ele
@@ -29,3 +29,5 @@ Regras rápidas:
   pesquise o estado atual do tema antes do roteiro.
 - Valores monetários sempre com `whiteSpace: 'nowrap'`; contadores escondidos
   até a legenda que os cita.
+- Se as parcelas de um dado não somam o total, algum número está
+  desatualizado: pesquise de novo antes de usar.
