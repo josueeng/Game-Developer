@@ -6,6 +6,7 @@ import {carregarFontes} from './fontes';
 import {Video, type VideoProps} from './Video';
 import {Thumbnail} from './Thumbnail';
 import {ThumbnailViral} from './ThumbnailViral';
+import {AvatarCanal, CapaCanal} from './CanalArte';
 import {DURACOES_PADRAO, duracoesDeTempos, duracoesProporcionais, type TemposNarracao} from './timing';
 
 const esperaFontes = delayRender('Carregando fontes');
@@ -55,5 +56,7 @@ export const RemotionRoot: React.FC = () => (
 		/>
 		<Still id="Thumbnail" component={ThumbnailViral} width={1280} height={720} />
 		<Still id="ThumbnailClassica" component={Thumbnail} width={1280} height={720} />
+		<Still id="CapaCanal" component={CapaCanal} width={2560} height={1440} />
+		<Still id="AvatarCanal" component={AvatarCanal} width={800} height={800} />
 	</>
 );

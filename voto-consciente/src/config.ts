@@ -2,7 +2,7 @@
 // thumbnail lê destes valores.
 
 export const CANAL = {
-	nome: 'SEU CANAL',
+	nome: 'VIRALMENTE VIRAL',
 	chamada: 'Inscreva-se',
 };
 

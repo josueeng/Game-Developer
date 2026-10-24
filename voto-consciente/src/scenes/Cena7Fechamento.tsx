@@ -87,12 +87,12 @@ const Inscricao: React.FC<{inicio: number; clique: number}> = ({inicio, clique})
 	const cursor = progresso(frame, clique - 26, clique - 2);
 	return (
 		<>
-			<Recorte seed="canal" inicio={inicio} cor={CORES.preto} rotacao={-1.5} style={{left: 500, top: 430, width: 920}} padding="30px 40px">
+			<Recorte seed="canal" inicio={inicio} cor={CORES.preto} rotacao={-1.5} style={{left: 360, top: 430, width: 1200}} padding="30px 40px">
 				<div style={{display: 'flex', alignItems: 'center', gap: 30}}>
 					<div style={{width: 120, height: 120, borderRadius: 60, background: CORES.amarelo, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: FONTES.titulo, fontSize: 56, color: CORES.preto, flexShrink: 0}}>
 						{CANAL.nome.split(' ').map((p) => p[0]).join('').slice(0, 2)}
 					</div>
-					<div style={{flex: 1, fontFamily: FONTES.titulo, fontSize: 60, color: CORES.papel, whiteSpace: 'nowrap'}}>{CANAL.nome}</div>
+					<div style={{flex: 1, fontFamily: FONTES.titulo, fontSize: 54, color: CORES.papel, whiteSpace: 'nowrap'}}>{CANAL.nome}</div>
 					<div
 						style={{
 							padding: '18px 30px',
@@ -116,7 +116,7 @@ const Inscricao: React.FC<{inicio: number; clique: number}> = ({inicio, clique})
 				viewBox="0 0 70 80"
 				style={{
 					position: 'absolute',
-					left: interpolate(cursor, [0, 1], [1500, 1240]),
+					left: interpolate(cursor, [0, 1], [1640, 1390]),
 					top: interpolate(cursor, [0, 1], [760, 540]),
 					opacity: frame > clique - 30 ? 1 : 0,
 					filter: 'drop-shadow(0 4px 4px rgba(0,0,0,0.3))',

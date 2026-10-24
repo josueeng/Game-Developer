@@ -11,7 +11,8 @@
     "thumbnail": "remotion still Thumbnail out/thumbnail.png",
     "render:all": "npm run render && npm run thumbnail",
     "typecheck": "tsc --noEmit",
-    "tempos": "node scripts/detectar-tempos.mjs"
+    "tempos": "node scripts/detectar-tempos.mjs",
+    "canal": "remotion still CapaCanal out/capa-canal.png && remotion still AvatarCanal out/avatar-canal.png"
   },
   "dependencies": {
     "@fontsource/archivo": "^5.3.0",
