@@ -34,7 +34,6 @@ npm run render
 
 ### Trocar pela sua voz
 
-
 1. Grave seguindo `roteiro_narracao.md`, com ~0,5 s de silêncio entre as cenas.
 2. Salve como `public/narracao.mp3`.
 3. Rode `npm run tempos`. O script cria `public/narracao-tempos.json` com o

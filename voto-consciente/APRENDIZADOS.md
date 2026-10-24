@@ -1,0 +1,194 @@
+# Aprendizados: vídeo "Por que o seu voto vale mais do que você imagina"
+
+Registro do que funcionou, do que deu errado e de como foi resolvido na
+criação do primeiro vídeo do canal (Remotion + TypeScript, out/2026). Serve de
+guia para os próximos vídeos.
+
+---
+
+## 1. Processo que funcionou
+
+1. **Pesquisa → roteiro → aprovação → animação.** Escrever o roteiro com os
+   dados e as fontes antes de qualquer animação, mostrar e só animar depois do
+   "ok". Isso evitou retrabalho: o roteiro foi aprovado sem mudanças.
+2. **Roteiro como fonte única.** `src/roteiro.ts` guarda o texto já quebrado em
+   trechos de legenda; a narração sintética, as legendas e os tempos das
+   animações saem dele. `roteiro_narracao.md` é a versão para leitura humana.
+3. **Primeiro quadros soltos, depois o vídeo inteiro.** Renderizar ~20 stills
+   em meia resolução (um bundle só, via `@remotion/renderer`) e montar
+   "folhas de contato" 2×N com PIL achou quase todos os problemas de layout
+   em ~1 min, contra 7 min de um render completo.
+4. **Conferir o MP4 final extraindo quadros com ffmpeg** nos momentos em que a
+   narração diz algo específico (meio de cada legenda-chave). Foi assim que
+   apareceu o gráfico ainda crescendo enquanto a voz já dizia "21,08%".
+5. **Commits pequenos e push a cada etapa** (roteiro → projeto → ajuste →
+   narração).
+
+## 2. Dados e checagem de fatos
+
+- **Verificar a data atual antes de pesquisar.** Hoje era 24/10/2026: as
+  "últimas eleições" eram o 1º turno de 04/10/2026, não 2022. Assumir 2022
+  teria deixado o vídeo desatualizado.
+- **Fontes oficiais usadas:** notas do TSE (eleitorado 2026: 158.745.463;
+  SP 34.104.226; MG 16.377.659; RR ~401 mil), totalização do 1º turno
+  (comparecimento 125.275.835; brancos 2.300.798 = 1,84%; nulos 3.674.249 =
+  2,93%), Agência Brasil e Agência Senado (abstenção 21,08%, maior desde 1998).
+  Série de abstenção no 1º turno: 2014 19,39% · 2018 20,33% · 2022 20,95% ·
+  2026 21,08%.
+- **Derivar quando possível:** abstenção absoluta = aptos − comparecimento
+  (158.745.463 − 125.275.835 = 33.469.628). A conta fecha com o 21,08%.
+- **Não usar o que não dá para confirmar:** o eleitorado dos 27 estados não
+  foi confirmado em fonte oficial, então o mapa mostra números só de SP, MG e
+  RR. "Roraima, o menor colégio" virou "um dos menores", porque a fonte só
+  dizia isso.
+- **Leis citadas:** compra de votos = Código Eleitoral (Lei 4.737/1965),
+  art. 299 (até 4 anos de reclusão e multa, para quem oferece e para quem
+  aceita); cassação do candidato = Lei 9.504/1997, art. 41-A (incluído pela
+  Lei 9.840/1999). Denúncia: app Pardal (TSE). Boatos: Fato ou Boato
+  (Justiça Eleitoral). Mandatos: CF arts. 28, 44, 46 e 82.
+- **Apartidário de verdade:** nenhum nome de candidato ou partido, ficha de
+  candidato genérica ("CANDIDATO(A) — ficha de exemplo"), jornal e mensagem
+  falsa inventados.
+- **Ser transparente:** o contêiner não acessava tse.jus.br, então os números
+  vieram de buscas que citam o TSE. Isso foi dito ao usuário, com a sugestão de
+  conferir em resultados.tse.jus.br antes de publicar.
+
+## 3. Ambiente (sessão na nuvem): erros e soluções
+
+| Problema | Causa | Solução |
+|---|---|---|
+| `curl` para tse.jus.br e IBGE → 403 | proxy de saída bloqueia esses hosts | WebSearch para os dados; malha do IBGE via GitHub (`fititnt/gis-dataset-brasil`, ODbL) |
+| WebFetch → `ENOTFOUND` em tse.jus.br, agenciabrasil, congressoemfoco | sem DNS para esses domínios | usar o resumo e as citações do WebSearch (modo `extended`) |
+| `git push` → 403 no começo | GitHub App sem acesso ao repositório | avisar o usuário com o link de reconexão; depois de liberado, o push funcionou. Retentar não adianta para 403 (só para erro de rede). |
+| `remotion still` tentou baixar o Chrome (`remotion.media` ENOTFOUND) | sem acesso ao CDN do Remotion | `Config.setBrowserExecutable()` apontando para o Chromium pré-instalado em `/opt/pw-browsers/.../chrome-headless-shell`, condicional a `existsSync`, para não quebrar na máquina do usuário |
+| Aviso "Detected differing memory amounts" | cgroup do contêiner | inofensivo, pode ignorar |
+| HuggingFace bloqueado (sem Piper, Whisper etc.) | proxy | Kokoro: modelo baixado de **GitHub Releases** (`thewh1teagle/kokoro-onnx`), que funciona; espeak-ng vem embutido no pip (`espeakng-loader`) |
+| Sem ferramenta para ouvir o áudio | ambiente sem saída de som | validar a pronúncia pelos **fonemas** (`kokoro.tokenizer.phonemize(texto, 'pt-br')`) e medir volume com `ebur128`/`volumedetect`. Avisar o usuário que o áudio não foi ouvido. |
+
+O que funciona na rede: registry do npm, PyPI, raw.githubusercontent.com,
+downloads de GitHub Releases. Google Fonts respondeu, mas as fontes foram
+servidas localmente (Fontsource → `public/fonts`) para não depender de rede no
+render.
+
+## 4. Remotion: lições técnicas
+
+- **TransitionSeries encurta o vídeo:** cada transição sobrepõe as cenas. Para
+  cada cena começar exatamente no seu tempo, dei a cada cena (menos a última)
+  `duração + TRANSICAO`. Total = soma das durações.
+- **Armadilha:** dentro da cena, `useVideoConfig().durationInFrames` é a
+  duração **com** a transição (ex.: 1070, não 1050). Animações por fração
+  ficaram ~2% atrasadas. Foi uma das razões para trocar frações por marcas de
+  legenda.
+- **Animar por marcas de legenda, não por segundos fixos.** `useMarcas()` em
+  `src/anim.ts` dá `m(i, ajuste)` = quadro em que a legenda *i* da cena
+  começa (`m(2.5)` = meio da legenda 2). Com isso, qualquer narração nova
+  realinha tudo sozinha. Começar só com frações (`t(0.3)`) causou
+  dessincronia.
+- **Legendas sem "piscar":** quando o intervalo entre duas legendas é menor
+  que 20 quadros, a anterior fica na tela até a próxima.
+- **`calculateMetadata`** decide a duração em tempo de render: detecta
+  `public/narracao.mp3` com `fetch(staticFile(...), {method: 'HEAD'})`, lê
+  `narracao-tempos.json` se existir ou estica as cenas proporcionalmente ao
+  áudio (`getAudioDurationInSeconds`).
+- **Fontes:** `@remotion/fonts` `loadFont` + `delayRender` no Root. O subset
+  "latin" do Fontsource cobre acentos, `–`, `—` e `…`, mas **não** `≈` nem
+  `✓`: troquei por `~401 mil` e `Inscrito!`. Conferir glifos especiais antes.
+- **Recorte de papel:** `clip-path: polygon(...)` com variação determinística
+  (`random(seed)`) e `filter: drop-shadow` no elemento **pai** (no mesmo
+  elemento, o clip corta a sombra).
+- **Marca-texto:** `background-size` animado de 0 a 100% num gradiente. As
+  bordas transparentes de 0,4em deixavam a última letra sem cor; 0,04–0,12em
+  resolveu.
+- **Mapa:** `d3-geo` (`geoMercator().fitExtent`) + `topojson-client`, JSON
+  importado direto (`resolveJsonModule`). As ilhas oceânicas encolhem um pouco
+  o mapa; aceitável. Entrada dos estados ordenada por `cx + cy` (varredura
+  noroeste→sudeste).
+- **Gráfico honesto:** barras com base no zero, mesmo com valores próximos
+  (19–21%). Os rótulos de valor fazem a diferença aparecer.
+- **Render:** ~7 min para 166 s em 1080p30 com 4 núcleos (CRF 18, JPEG 90),
+  ~62 MB. Renderizar a thumbnail ao mesmo tempo deixa o render mais lento.
+
+## 5. Erros de layout encontrados na conferência (e correções)
+
+| Onde | Erro | Correção |
+|---|---|---|
+| Linha do tempo | texto da faixa "4 anos" cortado (barra estreita, fonte 30) | fonte 26 e texto mais curto |
+| Linha do tempo | rótulo "2034" encostado na borda direita | marco movido de 0,98 para 0,94 |
+| Linha do tempo | marco 2034 aparecia depois da frase "valendo em 2034" | duração da linha calculada para chegar em `m(8)` |
+| Cena 2 | linha do tempo entrava enquanto a voz ainda falava de "obras da cidade" | troca de parte ligada à legenda certa |
+| Números | card "6 milhões" estourando a largura | "6" e "milhões" em linhas separadas, card mais largo |
+| Números | gráfico ainda crescendo quando a voz dizia "21,08%" | gráfico entra antes, com barras mais rápidas (intervalo 10) |
+| Crime | carimbo "CRIME" quase saindo da tela com o zoom Ken Burns | fonte 150→124 e reposicionado. Lembrar que o zoom amplia as bordas. |
+| Desinformação | "NA DÚVIDA, NÃO COMPARTILHE." numa linha só passaria de 1920 px | duas linhas, fonte 56 |
+| Desinformação | item longo "Busque no Fato ou Boato (Justiça Eleitoral)" quebrava | título curto + subtítulo menor |
+| Fechamento | nome do canal quebrava em 2 linhas ao lado de "Inscreva-se" | `whiteSpace: 'nowrap'` |
+| Thumbnail | nome do jornal quebrava em 2 linhas | nome mais curto, sem a data |
+
+**Regra:** estimar a largura antes de escrever. Archivo Black ≈ 0,72 em por
+caractere; Archivo 800 ≈ 0,55 em. Conteúdo sempre acima de y = 830 (a faixa de
+legenda ocupa a parte de baixo). Deixar ~60 px de folga nas bordas por causa
+do zoom.
+
+## 6. Erros de processo meus (para não repetir)
+
+- **Edição por substring ambígua:** num script Python de substituição, procurei
+  `"\t\t\t\t\t{["` (5 tabs), que também casava dentro de uma linha com 7 tabs.
+  Isso apagou metade da Cena 5. Usar trechos únicos e maiores, ou a ferramenta
+  Edit. Rodar `tsc --noEmit` depois de cada lote de edições pegou o erro na
+  hora.
+- **Nome de arquivo errado ao montar a folha de contato** (`Video-000170`
+  em vez de `Video-00170`): usar glob ou nomes gerados, não digitados.
+- **Captura do stderr do ffmpeg:** a primeira versão de `detectar-tempos.mjs`
+  rodava o ffmpeg 3 vezes para pegar o log. O certo é
+  `spawnSync(...).stderr` (o ffmpeg escreve o relatório no stderr).
+- **`sed` apagou uma linha que eu ainda usaria** (`fibras = Image.new`) na
+  textura. Funcionou porque a variável era redefinida logo depois, mas foi
+  sorte: revisar antes de aplicar `sed -i`.
+- **Gerar a narração sem pensar na velocidade:** o Kokoro pt-BR a 1,0 sai a
+  ~3,8 palavras/s, rápido demais. 0,9 deu 2min43s e ritmo melhor.
+
+## 7. Narração sintética (Kokoro)
+
+- Vozes pt-BR: `pf_dora` (feminina, usada), `pm_alex`, `pm_santa`.
+- Pronúncia: números, datas e porcentagens saem por extenso corretamente.
+  Siglas não: "TSE" era lido como uma palavra ("tsy"), então virou
+  "tê ésse ê". Decimais foram escritos por extenso por segurança. A tabela
+  `PRONUNCIA` em `scripts/gerar-narracao.py` muda só o texto **falado**; a
+  legenda continua igual.
+- Gerar **por frase** (juntando trechos de legenda até `. ? ! :`), não por
+  trecho: preserva a entonação. O tempo de cada trecho dentro da frase é
+  dividido pelo número de fonemas, o que dá legendas bem alinhadas.
+- Pausas: 0,28 s entre frases, 0,9 s no fim de cada cena, 2 s no final.
+  Normalizar com `loudnorm=I=-16:TP=-1.5`. Resultado: -17,4 LUFS na mistura,
+  trilha ~16 dB abaixo da voz (volume da trilha 0,12 com narração e 0,45
+  sem).
+
+## 8. Recursos próprios (sem direitos de terceiros)
+
+- Textura de papel: ruído multioitava + fibras + vinheta em NumPy/PIL
+  (`npm run textura`).
+- Trilha: síntese em Node puro (pad C–Am–F–G, arpejo tipo pluck, pulso grave,
+  92 BPM) → WAV → MP3 via ffmpeg (`npm run trilha`).
+- Fontes OFL (Archivo, Archivo Black, Playfair Display, Caveat).
+- Ícones SVG desenhados à mão no código.
+- Nada da identidade da Vox (nome, logo, vinheta, fontes, trilha).
+
+## 9. Checklist para o próximo vídeo
+
+- [ ] Confirmar a data de hoje e o contexto recente do tema.
+- [ ] Pesquisar dados em fonte oficial; anotar fonte e valor; descartar o que
+      não for confirmado.
+- [ ] Escrever o roteiro (trechos de legenda ≤ ~55 caracteres) e mostrar antes
+      de animar.
+- [ ] Copiar este projeto como base: `config.ts`, componentes, `anim.ts`
+      (useMarcas), `timing.ts`, scripts.
+- [ ] Amarrar cada animação-chave a `m(i)` desde o começo.
+- [ ] Stills em meia resolução + folha de contato antes do render completo.
+- [ ] Gerar ou receber a narração → `narracao-tempos.json` → render.
+- [ ] Extrair quadros do MP4 final no meio das frases-chave e conferir a
+      sincronia.
+- [ ] Medir o volume (`ebur128`); ~-16/-17 LUFS para o YouTube.
+- [ ] Thumbnail 1280x720 com 3–5 palavras grandes, um destaque amarelo e um
+      número.
+- [ ] Lembrar a licença do Remotion: gratuita só para pessoas físicas e
+      empresas de até 3 pessoas.
