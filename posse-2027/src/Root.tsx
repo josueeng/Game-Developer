@@ -7,6 +7,7 @@ import {Video, type VideoProps} from './Video';
 import {Short, quadrosDoShort} from './Short';
 import {SHORTS} from './shorts';
 import {Thumb72, ThumbRiscado, ThumbnailViral} from './ThumbnailViral';
+import {ThumbCadeira, ThumbCirculo, ThumbDocumento, ThumbMapa, ThumbPergunta} from './ThumbsEstilos';
 import {DURACOES_PADRAO, duracoesDeTempos, duracoesProporcionais, type TemposNarracao} from './timing';
 
 const esperaFontes = delayRender('Carregando fontes');
@@ -73,5 +74,10 @@ export const RemotionRoot: React.FC = () => (
 		<Still id="Thumbnail" component={ThumbnailViral} width={1280} height={720} />
 		<Still id="ThumbRiscado" component={ThumbRiscado} width={1280} height={720} />
 		<Still id="Thumb72" component={Thumb72} width={1280} height={720} />
+		<Still id="ThumbCadeira" component={ThumbCadeira} width={1280} height={720} />
+		<Still id="ThumbMapa" component={ThumbMapa} width={1280} height={720} />
+		<Still id="ThumbDocumento" component={ThumbDocumento} width={1280} height={720} />
+		<Still id="ThumbCirculo" component={ThumbCirculo} width={1280} height={720} />
+		<Still id="ThumbPergunta" component={ThumbPergunta} width={1280} height={720} />
 	</>
 );

@@ -461,3 +461,14 @@ Regras novas para thumbnails:
 | Desenho do Congresso escondido atrás do recorte do compromisso | menor e mais acima |
 | Removi `const frame` de um componente que ainda usava (sed amplo demais) | editar só a linha do componente certo; `tsc` pegou |
 | "A POSSE" encostando no calendário na thumbnail | calendário menor e mais à direita |
+
+## Estilos de thumbnail dos canais sem rosto (referência, sem copiar marca)
+- Educação animada: ilustração plana, um objeto, fundo saturado, 0 a 3 palavras.
+- Geografia explicada: mapa + seta vermelha + número com marca-texto amarelo.
+- Documentário: fundo escuro, documento/objeto com luz, trecho marcado.
+- Curiosidades: objeto grande, círculo e seta vermelhos.
+- Texto puro: pergunta curta em cor chapada com um ícone pequeno.
+- As fontes sobre CTR são quase todas de blogs comerciais: o que se repete é
+  contraste alto, um ponto focal, pouco texto e testar contra a média do próprio
+  canal (o YouTube escolhe a vencedora pelo tempo assistido, não só por cliques).
+- Exemplo das 5: `posse-2027/src/ThumbsEstilos.tsx`.

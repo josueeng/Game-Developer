@@ -66,3 +66,16 @@ quando o presidente eleito toma posse, posse presidencial 2027, posse 5 de janei
 - 0:00–0:39: "A posse não é mais em 1º de janeiro" (gancho + a data mudou)
 - 1:19–1:39: "A regra dos 10 dias" (posse e vacância)
 - 1:53–fim: "O calendário até a posse"
+
+## 5 variantes por estilo de canal (`src/ThumbsEstilos.tsx`)
+
+| Arquivo | Estilo de referência | Ideia |
+|---|---|---|
+| `out/ThumbCadeira.png` | ilustração plana de um objeto só (educação animada) | cadeira vazia + "72 DIAS até a posse" |
+| `out/ThumbMapa.png` | mapa + seta + marca-texto (geografia explicada) | Brasília marcada + "5/1, a nova data da posse" |
+| `out/ThumbDocumento.png` | documento em fundo escuro (documentário) | art. 78 com "declarado vago" + "CARGO VAGO?" |
+| `out/ThumbCirculo.png` | objeto grande com círculo e seta (curiosidades) | calendário do 5 circulado + "MUDOU" |
+| `out/ThumbPergunta.png` | pergunta em texto, cor chapada, ícone pequeno | "POR QUE SÓ EM 5 DE JANEIRO?" |
+
+O "Testar e comparar" aceita até 3 por vez: comece por Documento, Mapa e Círculo
+(três estilos bem diferentes) e depois teste a vencedora contra as outras.
