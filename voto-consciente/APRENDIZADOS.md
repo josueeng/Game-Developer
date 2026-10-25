@@ -394,3 +394,20 @@ do zoom.
 | "~30.000 km" sugeria precisão | termina em "~30 mil km" |
 | Cartão "664 km · todos os dias" vazava | cartão mais largo |
 | Parte da cena com tela vazia ("1960: o auge") | locomotiva amarela à direita |
+
+---
+
+# Short avulso: "2º turno no exterior" (`../exterior-2turno`)
+
+- Pedido "cada país onde fecharam as urnas": a imprensa só tinha os dois turnos
+  de forma confiável para 8 países. O Short diz isso e usa só esses.
+- Dado de eleição em andamento: um retrato só, com a hora na tela ("PARCIAL ·
+  25/10, INÍCIO DA TARDE"), e a proporção do exterior no total (0,24%).
+- Neutralidade: os dois candidatos com o mesmo peso (Lula azul, Flávio amarelo),
+  sem fotos, números de urna ou logotipos; a capa usa cores neutras.
+- Projeto vertical próprio (não é corte do vídeo longo): `src/ShortExterior.tsx`,
+  uma cena, `m(i)` direto dos tempos das legendas. Narração em velocidade 1.0
+  para caber em ~1 min.
+- Erros: rótulo do % cortado dentro de faixas estreitas da barra (≤ 20%) → rótulos
+  embaixo da barra; nome do canal estourando o card → fonte 84→70; recorte "17h"
+  quebrando linha por cima das fontes → mais largo e fontes escondidas no final.
