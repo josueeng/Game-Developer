@@ -411,3 +411,16 @@ do zoom.
 - Erros: rótulo do % cortado dentro de faixas estreitas da barra (≤ 20%) → rótulos
   embaixo da barra; nome do canal estourando o card → fonte 84→70; recorte "17h"
   quebrando linha por cima das fontes → mais largo e fontes escondidas no final.
+
+---
+
+# Short avulso: "O exterior virou" (`../exterior-virada`)
+
+- O usuário pediu o **horário** de cada dado e **quanto já foi apurado**. Sem
+  percentual oficial de apuração, usei medidas verificáveis: votos contados
+  (148 mil) contra os 301 mil dos dois no 1º turno (TSE) e países com votação
+  encerrada (54 de 134, com a hora).
+- Somas do exterior divergem entre veículos (InfoMoney × Metrópoles às 15h):
+  cada placar aparece com fonte e hora, nunca misturado.
+- Número que não fecha fica fora (Alemanha: "15.169 × 3.488 = 74,43%" daria 81,3%).
+- Horários na legenda ("11h41") são lidos por extenso via `PRONUNCIA`.
