@@ -62,7 +62,7 @@ export const Cena4Estrada: React.FC = () => {
 				<KenBurns zoom={[1.0, 1.04]}>
 					<Recorte seed="citacao" inicio={iniC + 4} cor={CORES.preto} rotacao={-1} style={{left: 260, top: 200, width: 1400}} padding="40px 56px">
 						<div style={{fontFamily: FONTES.jornal, fontSize: 120, color: CORES.amarelo, lineHeight: 0.6}}>“</div>
-						<div style={{fontFamily: FONTES.titulo, fontSize: 66, color: CORES.papel, lineHeight: 1.15, opacity: progresso(frame, m(6), m(6, 12))}}>
+						<div style={{fontFamily: FONTES.titulo, fontSize: 66, color: CORES.papel, lineHeight: 1.15, opacity: progresso(frame, iniC + 12, iniC + 24)}}>
 							Nos anos 60 e 70 sumiram praticamente todas as ferrovias menores.
 						</div>
 						<div style={{fontFamily: FONTES.texto, fontWeight: 800, fontSize: 32, color: CORES.azulClaro, marginTop: 24}}>Ralph Giesbrecht, pesquisador</div>

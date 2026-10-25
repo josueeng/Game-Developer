@@ -52,8 +52,8 @@ export const Cena2Auge: React.FC = () => {
 					<div style={{position: 'absolute', left: 150, top: 480, fontFamily: FONTES.texto, fontWeight: 800, fontSize: 46, color: CORES.preto, opacity: progresso(frame, m(3, 20), m(3, 30))}}>
 						de ferrovias, em 24 estados
 					</div>
-					<div style={{position: 'absolute', left: 1180, top: 110, opacity: progresso(frame, iniB, iniB + 12)}}>
-						<Locomotiva largura={520} tipo="vapor" cor={CORES.amarelo} />
+					<div style={{position: 'absolute', left: 1440, top: 110, opacity: progresso(frame, iniB, iniB + 12)}}>
+						<Locomotiva largura={360} tipo="vapor" cor={CORES.amarelo} />
 					</div>
 					<div style={{position: 'absolute', left: 1040, top: 520, transform: 'rotate(3deg)', opacity: progresso(frame, m(4), m(4, 10))}}>
 						<Bilhete de="INTERIOR" para="CAPITAL" detalhe="passageiros · 2ª classe" largura={720} cor="#F3E6C4" />
