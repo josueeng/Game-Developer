@@ -277,3 +277,29 @@ do zoom.
   destacam), `Bomba`, `Barril`, `Bequer`, `Calendario`, `Caminhao`, ícones das
   etapas e `EtiquetaCidade` (preço sem número, quando não há fonte oficial).
 - `components/Inscricao.tsx`: card de inscrição extraído para reutilizar.
+
+---
+
+# Shorts (todos os vídeos)
+
+- **Fidelidade:** o Short não tem roteiro novo. `src/Short.tsx` renderiza o
+  próprio `<Video>` dentro de `<Series>` + `<Sequence from={-início}>`, ou
+  seja, trechos contínuos do vídeo principal com a mesma narração, as mesmas
+  cenas e as mesmas fontes. Na vertical (1080x1920), o vídeo ocupa a largura
+  (escala 0,5625), com título no topo, as fontes do trecho em texto legível
+  logo abaixo e legendas grandes remapeadas para o tempo do Short.
+- **Cortar entre frases:** usar os tempos de `public/narracao-tempos.json`.
+  Início de trecho = início da cena + 0,2 s; fim = início da cena seguinte
+  − 0,2 s.
+- **Não deixar promessa sem resposta:** se o trecho do gancho tem "fica até o
+  final…" e o Short não chega lá, cortar antes dessa frase.
+- **Erro encontrado:** começar um trecho no início de uma cena mostra a
+  transição original, com o fim da cena anterior por cima, inclusive o adesivo
+  da promessa que tinha sido cortada. Solução: uma cortina de papel nos
+  primeiros 22 quadros de cada trecho depois do primeiro. A narração segue
+  inteira.
+- `Video` ganhou as props `semLegendas` (o Short desenha as próprias legendas)
+  e `fimTrilha` (o fade da trilha usa a duração do vídeo original, não a do
+  Short).
+- Config dos Shorts em `src/shorts.ts`; render com `npm run shorts`
+  (`out/shorts/<id>.mp4`). Títulos e descrições em `../shorts_publicacao.md`.

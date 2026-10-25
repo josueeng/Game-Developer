@@ -31,3 +31,6 @@ Regras rápidas:
   até a legenda que os cita.
 - Se as parcelas de um dado não somam o total, algum número está
   desatualizado: pesquise de novo antes de usar.
+- Shorts: só trechos contínuos do vídeo aprovado (`src/shorts.ts` +
+  `src/Short.tsx`, `npm run shorts`), cortados entre frases e sem promessa
+  sem resposta. Títulos e descrições em `shorts_publicacao.md`.

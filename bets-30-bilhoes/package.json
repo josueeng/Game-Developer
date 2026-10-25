@@ -11,7 +11,8 @@
     "thumbnail": "remotion still Thumbnail out/thumbnail.png",
     "render:all": "npm run render && npm run thumbnail",
     "typecheck": "tsc --noEmit",
-    "tempos": "node scripts/detectar-tempos.mjs"
+    "tempos": "node scripts/detectar-tempos.mjs",
+    "shorts": "node scripts/render-shorts.mjs"
   },
   "dependencies": {
     "@fontsource/archivo": "^5.3.0",

@@ -4,6 +4,8 @@ import {getAudioDurationInSeconds} from '@remotion/media-utils';
 import {ALTURA, FPS, LARGURA} from './config';
 import {carregarFontes} from './fontes';
 import {Video, type VideoProps} from './Video';
+import {Short, quadrosDoShort} from './Short';
+import {SHORTS} from './shorts';
 import {Thumbnail} from './Thumbnail';
 import {ThumbnailViral} from './ThumbnailViral';
 import {AvatarCanal, CapaCanal} from './CanalArte';
@@ -54,6 +56,22 @@ export const RemotionRoot: React.FC = () => (
 			defaultProps={{temNarracao: false, duracoes: DURACOES_PADRAO} satisfies VideoProps}
 			calculateMetadata={calcularMetadados}
 		/>
+		{SHORTS.map((s) => (
+			<Composition
+				key={s.id}
+				id={`Short-${s.id}`}
+				component={Short}
+				fps={FPS}
+				width={1080}
+				height={1920}
+				durationInFrames={quadrosDoShort(s)}
+				defaultProps={{temNarracao: false, duracoes: DURACOES_PADRAO, short: s}}
+				calculateMetadata={async () => {
+					const meta = await calcularMetadados();
+					return {durationInFrames: quadrosDoShort(s), props: {...meta.props, short: s}};
+				}}
+			/>
+		))}
 		<Still id="Thumbnail" component={ThumbnailViral} width={1280} height={720} />
 		<Still id="ThumbnailClassica" component={Thumbnail} width={1280} height={720} />
 		<Still id="CapaCanal" component={CapaCanal} width={2560} height={1440} />

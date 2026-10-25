@@ -20,6 +20,8 @@ export type VideoProps = {
 	temNarracao: boolean;
 	duracoes: number[]; // quadros por cena
 	temposLegendas?: TempoLegenda[] | null; // segundos, medidos na narração
+	semLegendas?: boolean; // os Shorts desenham as próprias legendas, maiores
+	fimTrilha?: number; // quadro em que a trilha termina (padrão: fim da composição)
 };
 
 const CENAS = [Cena1Gancho, Cena2Dinheiro, Cena3Casa, Cena4Mercado, Cena5Proibicao, Cena6Agora, Cena7Fechamento];
@@ -34,8 +36,9 @@ const TRANSICOES = [
 	slide({direction: 'from-right'}),
 ];
 
-export const Video: React.FC<VideoProps> = ({temNarracao, duracoes, temposLegendas}) => {
-	const {durationInFrames} = useVideoConfig();
+export const Video: React.FC<VideoProps> = ({temNarracao, duracoes, temposLegendas, semLegendas, fimTrilha}) => {
+	const {durationInFrames: duracaoComposicao} = useVideoConfig();
+	const durationInFrames = fimTrilha ?? duracaoComposicao;
 	const legendas = useMemo(() => calcularLegendas(duracoes, temposLegendas), [duracoes, temposLegendas]);
 	// Para cada cena, o quadro (relativo à cena) em que cada legenda começa.
 	const marcas = useMemo(() => {
@@ -66,7 +69,7 @@ export const Video: React.FC<VideoProps> = ({temNarracao, duracoes, temposLegend
 					);
 				})}
 			</TransitionSeries>
-			<Legendas legendas={legendas} />
+			{semLegendas ? null : <Legendas legendas={legendas} />}
 			{temNarracao ? <Audio src={staticFile('narracao.mp3')} /> : null}
 			<Audio
 				src={staticFile('trilha.mp3')}
