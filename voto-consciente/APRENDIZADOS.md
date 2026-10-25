@@ -442,3 +442,22 @@ Regras novas para thumbnails:
 - fazer 3 variantes por vídeo e usar o "Testar e comparar" do YouTube Studio.
 - Variantes das bets: `bets-30-bilhoes/src/ThumbnailsTeste.tsx`
   (`npx remotion still ThumbCelular|ThumbMatematica|ThumbNumero`).
+
+---
+
+# Vídeo 7: "O presidente eleito só assume em 5 de janeiro" (`../posse-2027`)
+
+## Por que o tema
+- Escolhido para pegar o pico de busca da noite do resultado ("quando toma posse"),
+  com uma surpresa verificável no gancho (EC 111/2021 mudou a posse para 5/1) e
+  sem citar candidato: serve para qualquer resultado e não envelhece até fevereiro.
+- Primeiro vídeo no estilo novo de thumbnail (3 variantes, fundos diferentes,
+  sem o personagem fixo).
+
+## Erros desta vez (e correções)
+| Erro | Correção |
+|---|---|
+| Círculo do calendário (SVG com `pathLength` + `preserveAspectRatio="none"`) saía incompleto | anel em CSS (`border-radius: 50%`) que entra com escala e opacidade |
+| Desenho do Congresso escondido atrás do recorte do compromisso | menor e mais acima |
+| Removi `const frame` de um componente que ainda usava (sed amplo demais) | editar só a linha do componente certo; `tsc` pegou |
+| "A POSSE" encostando no calendário na thumbnail | calendário menor e mais à direita |
