@@ -1,0 +1,39 @@
+{
+  "name": "trem-passageiros",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Vídeo explicativo: quanto ganha e o que faz um deputado federal",
+  "scripts": {
+    "dev": "remotion studio",
+    "trilha": "node scripts/gerar-trilha.mjs",
+    "textura": "python3 scripts/gerar-textura.py",
+    "render": "remotion render Video out/video.mp4",
+    "thumbnail": "remotion still Thumbnail out/thumbnail.png",
+    "render:all": "npm run render && npm run thumbnail",
+    "typecheck": "tsc --noEmit",
+    "tempos": "node scripts/detectar-tempos.mjs",
+    "shorts": "node scripts/render-shorts.mjs"
+  },
+  "dependencies": {
+    "@fontsource/archivo": "^5.3.0",
+    "@fontsource/archivo-black": "^5.3.0",
+    "@fontsource/caveat": "^5.3.0",
+    "@fontsource/playfair-display": "^5.3.0",
+    "@remotion/cli": "^4.0.538",
+    "@remotion/fonts": "^4.0.538",
+    "@remotion/media-utils": "^4.0.538",
+    "@remotion/transitions": "^4.0.538",
+    "d3-geo": "^3.1.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "remotion": "^4.0.538",
+    "topojson-client": "^3.1.0"
+  },
+  "devDependencies": {
+    "@types/d3-geo": "^3.1.1",
+    "@types/react": "^19.3.0",
+    "@types/topojson-client": "^3.1.5",
+    "@types/topojson-specification": "^1.0.5",
+    "typescript": "^5.9.3"
+  }
+}

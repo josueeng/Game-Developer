@@ -364,3 +364,33 @@ do zoom.
 | Na cena final, duas partes visíveis ao mesmo tempo (fim da parte A em m(4), início da B em m(3)) | a parte A termina em `iniB + 12` |
 | Contracheque pequeno demais, tela vazia | `scale(1.25)` com `transformOrigin: top left` |
 | Etiqueta da thumbnail saindo pela direita | x 860→820, fonte 46→40 |
+
+---
+
+# Vídeo 6: "Por que o Brasil (quase) não tem trem de passageiros?" (`../trem-passageiros`)
+
+## O que funcionou
+- **Premissa:** o Brasil tem trens de passageiros (urbanos, turísticos e duas
+  linhas de longa distância da Vale). Título com "(quase)" e comentário fixado
+  com a "correção antecipada".
+- **Mapa real de graça:** o Natural Earth (`ne_10m_railroads`, domínio público,
+  baixado do GitHub) tem a malha brasileira. `scripts/extrair-ferrovias.mjs`
+  recorta pelo contorno do Brasil (leva ~5 min por causa do `geoContains`).
+  `projecaoBrasil()` em `MapaBrasil.tsx` desenha linhas por cima do mapa.
+- **Sem dado, sem traçado:** não há base aberta confiável das linhas que
+  sumiram. Elas aparecem como "ESQUEMA ILUSTRATIVO", escrito na tela.
+- Ficaram de fora números de fonte única ou sem confirmação ("100 milhões de
+  passageiros nos anos 60", "RFFSA perdia US$ 1 milhão por dia").
+- Pronúncia: "Giesbrecht" → "Guísbréc", "Intercidades" → "Inter cidades".
+
+## Erros de layout desta vez (e correções)
+| Erro | Correção |
+|---|---|
+| Carimbo "NÃO HÁ" cobria o destino do bilhete | carimbo mais abaixo, na ponta do bilhete |
+| Linhas do esquema curtas demais no mapa (distâncias reais são pequenas a 660 px) | pontos de origem mais para o interior e traço 9→12 |
+| Malha real fina demais, quase invisível | traço 2,4→3,4 px |
+| Bitolas pequenas, tela vazia | `scale(1.25)` |
+| Caminhão aparecia cortado na borda antes da hora | escondido até a legenda |
+| "~30.000 km" sugeria precisão | termina em "~30 mil km" |
+| Cartão "664 km · todos os dias" vazava | cartão mais largo |
+| Parte da cena com tela vazia ("1960: o auge") | locomotiva amarela à direita |
