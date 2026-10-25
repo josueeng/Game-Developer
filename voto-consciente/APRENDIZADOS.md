@@ -303,3 +303,32 @@ do zoom.
   Short).
 - Config dos Shorts em `src/shorts.ts`; render com `npm run shorts`
   (`out/shorts/<id>.mp4`). Títulos e descrições em `../shorts_publicacao.md`.
+
+---
+
+# Vídeo 4: "O Flamengo foi eliminado… e pediu para ir à final" (`../flamengo-rojo`)
+
+## O que funcionou
+- **Premissa:** "jogador irregular" era a **acusação** do Flamengo, não um
+  fato. O jogador entrou em campo com liminar do CAS. O vídeo atribui cada
+  argumento a quem o fez e não diz quem tem razão.
+- **Caso em andamento:** checar de novo se houve decisão antes de animar (não
+  havia em 25/10) e marcar a data da situação no roteiro, na descrição e no
+  comentário fixado.
+- **Divergência de fontes:** a nota do Flamengo cita o art. 24.1.b do Código
+  Disciplinar; outras matérias citam o art. 19. O vídeo fala só "Código
+  Disciplinar da Conmebol", sem número.
+- **Marcas:** nada de escudos, camisas ou logotipos. Times em cores neutras
+  do canal (Flamengo em preto, Estudiantes em azul).
+- **Pronúncia de nomes estrangeiros:** "Rojo" saía "Rójo" e virou "Rorro";
+  "Sánchez" virou "Sântches". Conferir sempre pelos fonemas.
+
+## Erros desta vez (e correções)
+| Erro | Correção |
+|---|---|
+| `rm -f scenes/*` depois de `cd` foi bloqueado pela checagem de segurança | não era necessário: copiar só o que precisa, em vez de copiar e apagar |
+| "MARCOS ROJO" cortado no card | card mais largo (600→720) |
+| Risco do placar antigo caía sobre o nome do time | prop `riscado` no próprio `Placar`, desenhada sobre o placar |
+| "SANTOS" saindo do placar (nome longo do outro lado) | prop `fonteTime` menor nesse placar |
+| "ESTUDIANTES × PALMEIRAS" cortado | card mais largo e fonte 92→80 |
+| Primeira frase de cena sem nada na tela ("E não seria a primeira vez") | "2018" grande com marca-texto até a legenda seguinte |

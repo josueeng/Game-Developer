@@ -3,7 +3,7 @@
 ## Vídeos do canal Viralmente Viral (Remotion)
 
 Cada vídeo é um projeto próprio: `voto-consciente/` (vídeo 1),
-`bets-30-bilhoes/` (vídeo 2) e `gasolina/` (vídeo 3). Para um vídeo novo, copie o projeto mais recente
+`bets-30-bilhoes/` (vídeo 2), `gasolina/` (vídeo 3) e `flamengo-rojo/` (vídeo 4). Para um vídeo novo, copie o projeto mais recente
 (sem `node_modules`/`out`) e troque roteiro e cenas.
 
 Leia `voto-consciente/APRENDIZADOS.md` antes de criar ou editar vídeos: ele
@@ -31,6 +31,9 @@ Regras rápidas:
   até a legenda que os cita.
 - Se as parcelas de um dado não somam o total, algum número está
   desatualizado: pesquise de novo antes de usar.
+- Temas polêmicos ou em andamento: atribuir cada argumento a quem o fez,
+  não opinar, marcar a data da situação e checar novidades antes de animar.
+  Sem escudos, logotipos ou camisas (direito de marca).
 - Shorts: só trechos contínuos do vídeo aprovado (`src/shorts.ts` +
   `src/Short.tsx`, `npm run shorts`), cortados entre frases e sem promessa
   sem resposta. Títulos e descrições em `shorts_publicacao.md`.
