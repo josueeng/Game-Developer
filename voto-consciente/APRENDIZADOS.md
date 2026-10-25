@@ -332,3 +332,35 @@ do zoom.
 | "SANTOS" saindo do placar (nome longo do outro lado) | prop `fonteTime` menor nesse placar |
 | "ESTUDIANTES × PALMEIRAS" cortado | card mais largo e fonte 92→80 |
 | Primeira frase de cena sem nada na tela ("E não seria a primeira vez") | "2018" grande com marca-texto até a legenda seguinte |
+
+---
+
+# Vídeo 5: "Quanto ganha um deputado federal?" (`../deputado-federal`)
+
+## O que funcionou
+- **Tema validado pela busca:** pergunta entre as mais buscadas da eleição
+  (Google Trends, via Folha PE). Título com a pergunta e o dado surpresa
+  ("o salário é só 17% da conta").
+- **Fontes divergentes:** a verba de gabinete aparecia como R$ 133 mil,
+  R$ 151 mil e R$ 165.806,07. Valeu a página da Câmara citando o ato mais
+  recente (Ato da Mesa 243/2026). A Wikipedia ainda tinha o salário antigo.
+- **Não induzir ao erro:** verbas são tetos de gasto, não salário. O vídeo diz
+  isso em voz e num carimbo na tela, e a descrição e o comentário fixado
+  repetem.
+- **Número estimado:** "~R$ 40 mi em emendas" entra como "em média".
+- **Dados por estado incertos** (redistribuição de cadeiras pelo Censo 2022):
+  usar só os extremos garantidos pela Constituição (8 e 70).
+- Valores oficiais centralizados em `src/components/Deputado.tsx`; os
+  contadores leem de lá.
+
+## Erros de layout desta vez (e correções)
+| Erro | Correção |
+|---|---|
+| Barras do gancho cresciam para baixo (posição absoluta pelo topo) | contêiner flex ancorado embaixo |
+| "R$ 46.366,19" cortado no recorte | recorte 660→840 px |
+| Valor e detalhe do cartão do envelope cortados / escondidos atrás da frente | envelope 500→540, fonte 52→40, cartão sobe 130 px |
+| Carimbo "TETO DE GASTO" sobre os títulos dos envelopes e depois sobre a fonte | carimbo abaixo dos títulos; crédito da fonte encurtado |
+| "cerca de R$ 3,3 mi" e "~R$ 40 milhões" cortados | recortes mais largos e fonte menor |
+| Na cena final, duas partes visíveis ao mesmo tempo (fim da parte A em m(4), início da B em m(3)) | a parte A termina em `iniB + 12` |
+| Contracheque pequeno demais, tela vazia | `scale(1.25)` com `transformOrigin: top left` |
+| Etiqueta da thumbnail saindo pela direita | x 860→820, fonte 46→40 |
