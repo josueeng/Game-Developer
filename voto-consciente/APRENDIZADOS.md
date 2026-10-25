@@ -424,3 +424,21 @@ do zoom.
   cada placar aparece com fonte e hora, nunca misturado.
 - Número que não fecha fica fora (Alemanha: "15.169 × 3.488 = 74,43%" daria 81,3%).
 - Horários na legenda ("11h41") são lidos por extenso via `PRONUNCIA`.
+
+---
+
+# Thumbnails: diagnóstico depois dos primeiros dados (25/10/2026)
+
+O vídeo das bets teve 194 impressões em ~20 h, 100% vindas da pesquisa, e 5
+visualizações. Vistas lado a lado em tamanho de celular, as 6 thumbnails eram
+**a mesma**: fundo amarelo, mesmo personagem espantado, mesmo layout de 3 níveis
+de texto. Na busca, parecem um canal genérico e nada se destaca.
+
+Regras novas para thumbnails:
+- no máximo 4 palavras; um único objeto central (celular, seta, número);
+- variar o fundo entre vídeos (escuro, papel, amarelo) para não parecer repetido;
+- personagem espantado só de vez em quando, não como marca fixa;
+- nada importante no canto inferior direito (ali fica a duração do vídeo);
+- fazer 3 variantes por vídeo e usar o "Testar e comparar" do YouTube Studio.
+- Variantes das bets: `bets-30-bilhoes/src/ThumbnailsTeste.tsx`
+  (`npx remotion still ThumbCelular|ThumbMatematica|ThumbNumero`).
