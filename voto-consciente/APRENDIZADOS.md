@@ -472,3 +472,15 @@ Regras novas para thumbnails:
   contraste alto, um ponto focal, pouco texto e testar contra a média do próprio
   canal (o YouTube escolhe a vencedora pelo tempo assistido, não só por cliques).
 - Exemplo das 5: `posse-2027/src/ThumbsEstilos.tsx`.
+
+---
+
+# Short avulso: "De onde vieram os votos?" (`../short-1x2turno`)
+
+- Tom "indagatório" pedido pelo usuário: o Short faz perguntas e mostra só o que
+  os números dizem. Transferência de votos não se deduz de totais agregados; o
+  vídeo diz isso ("os números não respondem: o voto é secreto").
+- Totalização do 2º turno ainda em 99,96% nas fontes acessíveis: o número aparece
+  com o percentual e a hora, e a abstenção como "parcial".
+- Votos dos "outros candidatos" calculados a partir do total de válidos
+  (votos de Flávio ÷ 47,03%), não somando nomes (faltariam os nanicos).
