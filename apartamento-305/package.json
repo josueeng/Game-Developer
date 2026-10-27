@@ -5,7 +5,7 @@
   "description": "Vídeo explicativo: quanto ganha e o que faz um deputado federal",
   "scripts": {
     "dev": "remotion studio",
-    "render": "remotion render Teste out/teste.mp4",
+    "render": "remotion render Short out/short.mp4",
     "sons": "node scripts/gerar-sons.mjs",
     "typecheck": "tsc --noEmit"
   },

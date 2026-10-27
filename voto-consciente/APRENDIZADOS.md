@@ -484,3 +484,20 @@ Regras novas para thumbnails:
   com o percentual e a hora, e a abstenção como "parcial".
 - Votos dos "outros candidatos" calculados a partir do total de válidos
   (votos de Flávio ÷ 47,03%), não somando nomes (faltariam os nanicos).
+
+---
+
+# Suspense animado: "O apartamento 305" (`../apartamento-305`)
+
+- Formato novo (ficção): personagens em recorte (`Pessoa.tsx`, com braços, pernas,
+  cabeça que vira, olhos que arregalam), cenários em SVG, sons 100% sintetizados.
+- **Narração melhor**: voz masculina pm_alex, `asetrate` 0,92 (≈1,5 semitom abaixo e
+  8% mais lenta), pausas escritas por fala, EQ de graves, compressor e eco leve
+  (`scripts/narrar.py`). Os tempos das legendas são divididos pelo fator do tom.
+- Sons gerados a partir dos tempos da narração (`eventos.json`): as batidas caem nas
+  pausas, nunca por cima da voz.
+- Vertical: a cena desenhada em 1080 de largura ficava pequena; um zoom-base (1,3 a
+  1,45) com origem escolhida por cena resolveu. Conferir que parede/armário que a
+  história cita continuam no quadro depois do zoom.
+- Erros: esqueci o `npm ci` no projeto novo (tsc não achava React); relógio atrás da
+  cabeça da personagem sentada (subi o relógio); "TOC" cortado na borda depois do zoom.
