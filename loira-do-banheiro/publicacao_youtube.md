@@ -72,3 +72,23 @@ E conta: você já chamou a Loira do Banheiro na escola?
 | `short3-urna.mp4` | 1:39–1:59 | A mãe não quis enterrar a filha… #shorts |
 
 Em cada Short, use "Vídeo relacionado" apontando para o vídeo completo.
+
+## Descrições dos Shorts
+
+**Short 1 · Não fale o nome dela 3 vezes… #shorts**
+```
+Toda escola do Brasil tem essa história. Mas a Loira do Banheiro pode ter começado com uma mulher de verdade. 👻 Vídeo completo no canal.
+#shorts #LoiraDoBanheiro #LendaUrbana #Terror #Halloween
+```
+
+**Short 2 · Casada à força aos 14: a mulher por trás da Loira do Banheiro #shorts**
+```
+Maria Augusta, filha do Visconde de Guaratinguetá, foi casada aos 14 anos (segundo os relatos), fugiu para Paris e morreu em 1891, aos 26. O atestado de óbito desapareceu. História completa no canal.
+#shorts #LoiraDoBanheiro #HistóriaReal #Mistério
+```
+
+**Short 3 · A mãe não quis enterrar a filha… #shorts**
+```
+Segundo relatos, o corpo de Maria Augusta voltou de Paris embalsamado e ficou numa urna de vidro dentro de casa. Anos depois, o casarão virou escola. Vídeo completo no canal.
+#shorts #LoiraDoBanheiro #Terror #LendaUrbana
+```
