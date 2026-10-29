@@ -501,3 +501,24 @@ Regras novas para thumbnails:
   história cita continuam no quadro depois do zoom.
 - Erros: esqueci o `npm ci` no projeto novo (tsc não achava React); relógio atrás da
   cabeça da personagem sentada (subi o relógio); "TOC" cortado na borda depois do zoom.
+
+---
+
+# Vídeo 8: "A história real da Loira do Banheiro" (`../loira-do-banheiro`)
+
+- Tema escolhido pelo calendário (Halloween + Finados) e por misturar arrepio com
+  fato verificável. O que só existe em relatos é narrado como relato; colunas
+  FATO × LENDA no final.
+- Pacote de retenção: cold open sem logo, título com glitch RGB, legendas
+  karaokê com palavra-chave amarela, punch-in + tremor + flash vermelho nas frases
+  de impacto, sub-drop nas revelações, riser antes das viradas, datas
+  datilografadas com som, grão + vinheta, mergulho em preto nos cortes, loop final.
+- Áudio em três faixas: narrador (pm_alex tratado), sussurro (pf_dora lenta,
+  passa-alta, eco longo, tremolo) e sons; os eventos de som saem dos tempos da
+  narração (`eventos.json`).
+- Erro: legenda karaokê com `display: inline-block` + `marginRight` grudava
+  palavras da chave ("LOIRADOBANHEIRO"). Solução: spans inline com espaço real.
+- Erro: legenda por cima das ilustrações → faixa escura degradê no rodapé e
+  desenhos subidos/menores.
+- Shorts verticais tirados do MP4 final com ffmpeg (fundo desfocado + vídeo no
+  meio), mais rápido que uma composição nova.

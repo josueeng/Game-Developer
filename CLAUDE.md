@@ -3,7 +3,7 @@
 ## Vídeos do canal Viralmente Viral (Remotion)
 
 Cada vídeo é um projeto próprio: `voto-consciente/` (vídeo 1),
-`bets-30-bilhoes/` (vídeo 2), `gasolina/` (vídeo 3), `flamengo-rojo/` (vídeo 4), `deputado-federal/` (vídeo 5) e `trem-passageiros/` (vídeo 6), `posse-2027/` (vídeo 7); Shorts avulsos em `exterior-2turno/`, `exterior-virada/` e `short-1x2turno/`; suspense animado em `suspense-teste/` e `apartamento-305/`. Para um vídeo novo, copie o projeto mais recente
+`bets-30-bilhoes/` (vídeo 2), `gasolina/` (vídeo 3), `flamengo-rojo/` (vídeo 4), `deputado-federal/` (vídeo 5) e `trem-passageiros/` (vídeo 6), `posse-2027/` (vídeo 7); Shorts avulsos em `exterior-2turno/`, `exterior-virada/` e `short-1x2turno/`; suspense animado em `suspense-teste/` e `apartamento-305/`; lendas: `loira-do-banheiro/` (vídeo 8). Para um vídeo novo, copie o projeto mais recente
 (sem `node_modules`/`out`) e troque roteiro e cenas.
 
 Leia `voto-consciente/APRENDIZADOS.md` antes de criar ou editar vídeos: ele
