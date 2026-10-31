@@ -2,6 +2,11 @@
 
 ## Vídeos do canal Viralmente Viral (Remotion)
 
+**Direção do canal (a partir de 31/10/2026): nicho único "Mistérios e lendas do
+Brasil"**, com Shorts 9:16 nativos de 25–35 s (base: `shorts-lendas/`, roteiros em
+`shorts-lendas/roteiros.md`) e 1 vídeo longo por semana da mesma série. Diagnóstico em
+`pesquisa/diagnostico-canal.md`.
+
 Cada vídeo é um projeto próprio: `voto-consciente/` (vídeo 1),
 `bets-30-bilhoes/` (vídeo 2), `gasolina/` (vídeo 3), `flamengo-rojo/` (vídeo 4), `deputado-federal/` (vídeo 5) e `trem-passageiros/` (vídeo 6), `posse-2027/` (vídeo 7); Shorts avulsos em `exterior-2turno/`, `exterior-virada/` e `short-1x2turno/`; suspense animado em `suspense-teste/` e `apartamento-305/`; lendas: `loira-do-banheiro/` (vídeo 8). Para um vídeo novo, copie o projeto mais recente
 (sem `node_modules`/`out`) e troque roteiro e cenas.
