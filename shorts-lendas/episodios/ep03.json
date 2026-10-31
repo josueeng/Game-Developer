@@ -1,0 +1,224 @@
+{
+ "numero": 3,
+ "slug": "mulher-de-branco",
+ "titulo": "A Mulher de Branco",
+ "gancho": [
+  "NÃO DÊ CARONA",
+  "PARA ELA"
+ ],
+ "destaque": 1,
+ "falas": [
+  {
+   "t": "Se você ver uma mulher de branco pedindo carona numa estrada à noite... não pare.",
+   "pausa": 0.5,
+   "tipo": "N",
+   "leg": "Se você ver uma mulher de branco pedindo carona numa estrada à noite… não pare.",
+   "chave": "não pare"
+  },
+  {
+   "t": "Ela é o fantasma mais contado do Brasil.",
+   "pausa": 0.4,
+   "tipo": "N",
+   "chave": "mais contado"
+  },
+  {
+   "t": "A história quase sempre começa igual.",
+   "pausa": 0.2,
+   "tipo": "N"
+  },
+  {
+   "t": "Um motorista sozinho, tarde da noite, numa estrada vazia.",
+   "pausa": 0.3,
+   "tipo": "N",
+   "chave": "estrada vazia"
+  },
+  {
+   "t": "No acostamento, uma moça de vestido branco, cabelo comprido, pedindo carona.",
+   "pausa": 0.3,
+   "tipo": "N",
+   "chave": "vestido branco"
+  },
+  {
+   "t": "Ele para. Ela entra. Não diz uma palavra.",
+   "pausa": 0.4,
+   "tipo": "N",
+   "chave": "Não diz uma palavra"
+  },
+  {
+   "t": "Alguns quilômetros depois, ele olha pelo retrovisor...",
+   "pausa": 0.5,
+   "tipo": "N",
+   "leg": "Alguns quilômetros depois, ele olha pelo retrovisor…",
+   "chave": "retrovisor"
+  },
+  {
+   "t": "e o banco de trás está vazio.",
+   "pausa": 0.8,
+   "tipo": "N",
+   "chave": "vazio"
+  },
+  {
+   "t": "Em algumas versões, ela pede para descer na frente de um cemitério.",
+   "pausa": 0.3,
+   "tipo": "N",
+   "chave": "cemitério"
+  },
+  {
+   "t": "Em outras, é uma noiva que morreu antes do casamento, ou uma mãe que perdeu o filho.",
+   "pausa": 0.4,
+   "tipo": "N",
+   "chave": "noiva"
+  },
+  {
+   "t": "Ninguém sabe onde a história começou.",
+   "pausa": 0.3,
+   "tipo": "N",
+   "chave": "Ninguém sabe"
+  },
+  {
+   "t": "Mas ela tem uma parente famosa no México: a La Lhorôna, a mulher que chora.",
+   "pausa": 0.3,
+   "tipo": "N",
+   "leg": "Mas ela tem uma parente famosa no México: La Llorona, a mulher que chora.",
+   "chave": "La Llorona"
+  },
+  {
+   "t": "E histórias de fantasmas pedindo carona existem no mundo inteiro.",
+   "pausa": 0.4,
+   "tipo": "N",
+   "chave": "mundo inteiro"
+  },
+  {
+   "t": "Já te contaram de uma Mulher de Branco na sua cidade?",
+   "pausa": 0.8,
+   "tipo": "N",
+   "chave": "sua cidade"
+  }
+ ],
+ "cenas": [
+  {
+   "de": 0,
+   "fundo": "estrada",
+   "zoom": [
+    1.0,
+    1.1
+   ],
+   "elementos": [
+    {
+     "tipo": "mulher",
+     "x": 780,
+     "escala": 0.45
+    }
+   ]
+  },
+  {
+   "de": 2,
+   "fundo": "estrada",
+   "zoom": [
+    1.0,
+    1.15
+   ],
+   "elementos": [
+    {
+     "tipo": "faróis",
+     "em": 3
+    },
+    {
+     "tipo": "mulher",
+     "x": 800,
+     "escala": 0.5,
+     "em": 4
+    }
+   ]
+  },
+  {
+   "de": 5,
+   "fundo": "carro",
+   "zoom": [
+    1.0,
+    1.1
+   ],
+   "elementos": [
+    {
+     "tipo": "retrovisor",
+     "ocupado": true,
+     "em": 5
+    }
+   ]
+  },
+  {
+   "de": 7,
+   "fundo": "carro",
+   "zoom": [
+    1.1,
+    1.25
+   ],
+   "elementos": [
+    {
+     "tipo": "retrovisor",
+     "ocupado": false,
+     "em": 7
+    }
+   ]
+  },
+  {
+   "de": 8,
+   "fundo": "cemiterio",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "elementos": [
+    {
+     "tipo": "mulher",
+     "x": 540,
+     "escala": 0.6,
+     "em": 8
+    }
+   ]
+  },
+  {
+   "de": 10,
+   "fundo": "preto",
+   "elementos": [
+    {
+     "tipo": "placa",
+     "texto": "ORIGEM: DESCONHECIDA",
+     "em": 10
+    },
+    {
+     "tipo": "ficha",
+     "linhas": [
+      "BRASIL: MULHER DE BRANCO",
+      "MÉXICO: LA LLORONA"
+     ],
+     "em": 11
+    }
+   ]
+  },
+  {
+   "de": 13,
+   "fundo": "estrada",
+   "zoom": [
+    1.0,
+    1.1
+   ],
+   "elementos": [
+    {
+     "tipo": "mulher",
+     "x": 780,
+     "escala": 0.45
+    },
+    {
+     "tipo": "pergunta"
+    }
+   ]
+  }
+ ],
+ "punch": [
+  0,
+  7,
+  11
+ ],
+ "fontes": "WIKIPEDIA (BRAZILIAN MYTHOLOGY) · PORTAL SÃO FRANCISCO"
+}

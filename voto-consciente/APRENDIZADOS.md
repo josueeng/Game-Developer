@@ -522,3 +522,22 @@ Regras novas para thumbnails:
   desenhos subidos/menores.
 - Shorts verticais tirados do MP4 final com ffmpeg (fundo desfocado + vídeo no
   meio), mais rápido que uma composição nova.
+
+---
+
+# Série "Mistérios e lendas do Brasil" (`../shorts-lendas`)
+
+- Diagnóstico do canal (`../pesquisa/diagnostico-canal.md`): 2 Shorts fizeram ~88% das
+  views; vídeos longos em lote ficaram com 0–7 views. Decisão: nicho único e Shorts
+  9:16 nativos diários.
+- **Motor de episódios**: cada Short é um `episodios/epNN.json` (falas com pausa e
+  palavra-chave, cenas com `fundo` + `elementos`, `punch`). A narração (`narrar-ep.py`)
+  ajusta velocidade e pausas sozinha até ~55–58 s; os sons (`sons-ep.mjs`) saem dos
+  tempos e dos elementos (assobio, batidas, caixão, olhos, digitação, carimbo).
+- Kit visual: gancho visível no quadro 0, legenda pop de 1–3 palavras (Anton com
+  contorno), câmera de mão por ruído, neblina, partículas, light leak + motion blur +
+  flash no punch, ficha datilografada, loop (últimos 18 quadros voltam à cena 1).
+- Pacotes novos: @remotion/light-leaks (hueShift tem de ficar entre 0 e 360),
+  @remotion/motion-blur (CameraMotionBlur só em 6–7 quadros: é caro), @remotion/noise.
+- Erros: ficha e gancho no mesmo lugar no quadro 0 (tirei a ficha da 1ª cena); light leak
+  a 0,85 deixava tudo vermelho (baixei para 0,55).

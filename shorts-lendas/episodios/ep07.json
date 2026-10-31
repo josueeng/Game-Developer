@@ -1,0 +1,213 @@
+{
+ "numero": 7,
+ "slug": "apartamento-305-parte-2",
+ "titulo": "O apartamento 305 · parte 2",
+ "gancho": [
+  "APARTAMENTO 305",
+  "PARTE 2"
+ ],
+ "destaque": 1,
+ "ficcao": true,
+ "falas": [
+  {
+   "t": "A porta do armário estava aberta.",
+   "pausa": 0.6,
+   "tipo": "N",
+   "chave": "armário"
+  },
+  {
+   "t": "A Marina ficou parada no escuro, sem respirar.",
+   "pausa": 0.5,
+   "tipo": "N",
+   "chave": "sem respirar"
+  },
+  {
+   "t": "Ela acendeu a luz.",
+   "pausa": 0.4,
+   "tipo": "N"
+  },
+  {
+   "t": "Não tinha ninguém.",
+   "pausa": 0.6,
+   "tipo": "N",
+   "chave": "ninguém"
+  },
+  {
+   "t": "Só as roupas... e um papel dobrado no chão.",
+   "pausa": 0.5,
+   "tipo": "N",
+   "leg": "Só as roupas… e um papel dobrado no chão.",
+   "chave": "papel"
+  },
+  {
+   "t": "Uma letra antiga, tremida.",
+   "pausa": 0.3,
+   "tipo": "N"
+  },
+  {
+   "t": "Apartamento trezentos e cinco. Volte às três e dezessete.",
+   "pausa": 0.8,
+   "tipo": "N",
+   "leg": "\"Apartamento 305. Volte às 3h17.\"",
+   "chave": "3h17"
+  },
+  {
+   "t": "No dia seguinte, ela mostrou o bilhete ao porteiro.",
+   "pausa": 0.3,
+   "tipo": "N"
+  },
+  {
+   "t": "Ele leu duas vezes. E ficou pálido.",
+   "pausa": 0.5,
+   "tipo": "N",
+   "chave": "pálido"
+  },
+  {
+   "t": "Essa letra é da dona Lurdes. A antiga moradora do trezentos e cinco.",
+   "pausa": 0.8,
+   "tipo": "N",
+   "leg": "\"Essa letra é da dona Lurdes. A antiga moradora do 305.\"",
+   "chave": "dona Lurdes"
+  },
+  {
+   "t": "Naquela noite, a Marina não dormiu.",
+   "pausa": 0.4,
+   "tipo": "N"
+  },
+  {
+   "t": "O relógio marcou três e dezesseis.",
+   "pausa": 0.8,
+   "tipo": "N",
+   "leg": "O relógio marcou 3h16.",
+   "chave": "3h16"
+  },
+  {
+   "t": "E alguém bateu na porta da frente.",
+   "pausa": 0.4,
+   "tipo": "N",
+   "chave": "porta da frente"
+  },
+  {
+   "t": "Três vezes.",
+   "pausa": 1.6,
+   "tipo": "N",
+   "chave": "Três vezes"
+  },
+  {
+   "t": "Parte três? Comenta aí.",
+   "pausa": 0.8,
+   "tipo": "N",
+   "leg": "Parte 3? Comenta aí.",
+   "chave": "Comenta"
+  }
+ ],
+ "cenas": [
+  {
+   "de": 0,
+   "fundo": "quarto",
+   "zoom": [
+    1.0,
+    1.15
+   ],
+   "escuro": true,
+   "elementos": [
+    {
+     "tipo": "armario",
+     "aberto": true
+    }
+   ]
+  },
+  {
+   "de": 2,
+   "fundo": "quarto",
+   "zoom": [
+    1.05,
+    1.12
+   ],
+   "elementos": [
+    {
+     "tipo": "armario",
+     "aberto": true
+    }
+   ]
+  },
+  {
+   "de": 4,
+   "fundo": "preto",
+   "elementos": [
+    {
+     "tipo": "bilhete",
+     "texto": [
+      "Apartamento 305.",
+      "Volte às 3h17."
+     ],
+     "em": 5
+    }
+   ]
+  },
+  {
+   "de": 7,
+   "fundo": "portaria",
+   "zoom": [
+    1.0,
+    1.15
+   ],
+   "elementos": []
+  },
+  {
+   "de": 10,
+   "fundo": "quarto",
+   "zoom": [
+    1.0,
+    1.2
+   ],
+   "escuro": true,
+   "elementos": [
+    {
+     "tipo": "relogio",
+     "texto": "03:16",
+     "em": 11
+    }
+   ]
+  },
+  {
+   "de": 12,
+   "fundo": "porta",
+   "zoom": [
+    1.0,
+    1.25
+   ],
+   "elementos": [
+    {
+     "tipo": "batidas",
+     "em": 13
+    }
+   ]
+  },
+  {
+   "de": 14,
+   "fundo": "quarto",
+   "zoom": [
+    1.0,
+    1.15
+   ],
+   "escuro": true,
+   "elementos": [
+    {
+     "tipo": "armario",
+     "aberto": true
+    },
+    {
+     "tipo": "pergunta"
+    }
+   ]
+  }
+ ],
+ "punch": [
+  0,
+  9,
+  13
+ ],
+ "batidas": 13,
+ "fontes": "HISTÓRIA DE FICÇÃO"
+}

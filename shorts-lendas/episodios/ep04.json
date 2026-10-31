@@ -1,0 +1,205 @@
+{
+ "numero": 4,
+ "slug": "assobiar-a-noite",
+ "titulo": "Por que não assobiar à noite?",
+ "gancho": [
+  "NUNCA ASSOBIE",
+  "À NOITE"
+ ],
+ "destaque": 1,
+ "falas": [
+  {
+   "t": "Sua avó já te mandou parar de assobiar à noite?",
+   "pausa": 0.4,
+   "tipo": "N",
+   "chave": "assobiar à noite"
+  },
+  {
+   "t": "Se mandou, ela não estava sozinha.",
+   "pausa": 0.3,
+   "tipo": "N"
+  },
+  {
+   "t": "Essa é uma das superstições mais espalhadas que existem.",
+   "pausa": 0.3,
+   "tipo": "N",
+   "chave": "superstições"
+  },
+  {
+   "t": "No Brasil, dizem que o assobio noturno chama coisa ruim para perto de casa.",
+   "pausa": 0.4,
+   "tipo": "N",
+   "chave": "coisa ruim"
+  },
+  {
+   "t": "Em Portugal, contavam que assobiar à noite chamava o Diabo.",
+   "pausa": 0.4,
+   "tipo": "N",
+   "chave": "o Diabo"
+  },
+  {
+   "t": "No Havaí, que chamava os espíritos dos mortos.",
+   "pausa": 0.4,
+   "tipo": "N",
+   "chave": "espíritos"
+  },
+  {
+   "t": "E crenças parecidas aparecem em vários outros países, como a Coreia.",
+   "pausa": 0.4,
+   "tipo": "N",
+   "chave": "Coreia"
+  },
+  {
+   "t": "A ideia por trás é quase sempre a mesma:",
+   "pausa": 0.2,
+   "tipo": "N"
+  },
+  {
+   "t": "à noite, o silêncio é maior, e qualquer som chega mais longe.",
+   "pausa": 0.3,
+   "tipo": "N",
+   "chave": "mais longe"
+  },
+  {
+   "t": "Por isso, o assobio chamaria quem não devia ouvir.",
+   "pausa": 0.6,
+   "tipo": "N",
+   "chave": "não devia ouvir"
+  },
+  {
+   "t": "Ninguém sabe exatamente onde essa crença começou.",
+   "pausa": 0.3,
+   "tipo": "N",
+   "chave": "Ninguém sabe"
+  },
+  {
+   "t": "Mas ela atravessou oceanos, e chegou até a sua avó.",
+   "pausa": 0.5,
+   "tipo": "N",
+   "chave": "sua avó"
+  },
+  {
+   "t": "E aí: você assobia à noite? Conta aqui.",
+   "pausa": 0.8,
+   "tipo": "N",
+   "chave": "Conta aqui"
+  }
+ ],
+ "cenas": [
+  {
+   "de": 0,
+   "fundo": "casaNoite",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "elementos": [
+    {
+     "tipo": "ondas",
+     "em": 0
+    }
+   ]
+  },
+  {
+   "de": 2,
+   "fundo": "floresta",
+   "zoom": [
+    1.0,
+    1.1
+   ],
+   "elementos": [
+    {
+     "tipo": "ondas",
+     "em": 2
+    },
+    {
+     "tipo": "vulto",
+     "x": 300,
+     "em": 3
+    },
+    {
+     "tipo": "vulto",
+     "x": 800,
+     "em": 3
+    }
+   ]
+  },
+  {
+   "de": 4,
+   "fundo": "preto",
+   "elementos": [
+    {
+     "tipo": "ficha",
+     "linhas": [
+      "PORTUGAL: CHAMA O DIABO",
+      "HAVAÍ: CHAMA OS MORTOS",
+      "COREIA: TAMBÉM EVITAM"
+     ],
+     "em": 4
+    }
+   ]
+  },
+  {
+   "de": 7,
+   "fundo": "casaNoite",
+   "zoom": [
+    1.2,
+    1.0
+   ],
+   "elementos": [
+    {
+     "tipo": "ondas",
+     "em": 8
+    }
+   ]
+  },
+  {
+   "de": 9,
+   "fundo": "floresta",
+   "zoom": [
+    1.0,
+    1.3
+   ],
+   "elementos": [
+    {
+     "tipo": "olhos",
+     "em": 9
+    }
+   ]
+  },
+  {
+   "de": 10,
+   "fundo": "preto",
+   "elementos": [
+    {
+     "tipo": "placa",
+     "texto": "ORIGEM: DESCONHECIDA",
+     "em": 10
+    }
+   ]
+  },
+  {
+   "de": 11,
+   "fundo": "casaNoite",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "elementos": [
+    {
+     "tipo": "ondas",
+     "em": 11
+    },
+    {
+     "tipo": "pergunta"
+    }
+   ]
+  }
+ ],
+ "punch": [
+  0,
+  4,
+  9
+ ],
+ "fontes": "FOLCLORE PORTUGUÊS · USC FOLKLORE ARCHIVES (HAVAÍ, COREIA)"
+}

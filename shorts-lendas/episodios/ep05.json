@@ -1,0 +1,203 @@
+{
+ "numero": 5,
+ "slug": "homem-do-saco",
+ "titulo": "O Homem do Saco",
+ "gancho": [
+  "ELE LEVAVA",
+  "CRIANÇAS",
+  "NO SACO"
+ ],
+ "destaque": 2,
+ "falas": [
+  {
+   "t": "Quem não obedecia, o Homem do Saco levava.",
+   "pausa": 0.5,
+   "tipo": "N",
+   "chave": "Homem do Saco"
+  },
+  {
+   "t": "Toda criança brasileira já ouviu essa ameaça.",
+   "pausa": 0.3,
+   "tipo": "N",
+   "chave": "Toda criança"
+  },
+  {
+   "t": "Ele seria um velho maltrapilho, que andava pelas ruas com um saco nas costas.",
+   "pausa": 0.3,
+   "tipo": "N",
+   "chave": "saco nas costas"
+  },
+  {
+   "t": "Dentro do saco, as crianças que não voltavam para casa antes de escurecer.",
+   "pausa": 0.6,
+   "tipo": "N",
+   "chave": "antes de escurecer"
+  },
+  {
+   "t": "Em alguns lugares, ele se chama Velho do Saco.",
+   "pausa": 0.2,
+   "tipo": "N",
+   "chave": "Velho do Saco"
+  },
+  {
+   "t": "Em outros, Papa-Figo.",
+   "pausa": 0.4,
+   "tipo": "N",
+   "chave": "Papa-Figo"
+  },
+  {
+   "t": "Os pais usavam a história para fazer os filhos obedecer.",
+   "pausa": 0.4,
+   "tipo": "N",
+   "chave": "obedecer"
+  },
+  {
+   "t": "Mas de onde ele veio?",
+   "pausa": 0.6,
+   "tipo": "N",
+   "chave": "de onde"
+  },
+  {
+   "t": "Por incrível que pareça, ninguém sabe.",
+   "pausa": 0.3,
+   "tipo": "N",
+   "chave": "ninguém sabe"
+  },
+  {
+   "t": "Não existe um caso real documentado que tenha dado origem à lenda.",
+   "pausa": 0.4,
+   "tipo": "N",
+   "chave": "caso real"
+  },
+  {
+   "t": "Histórias parecidas, de um homem que leva crianças num saco, também assustavam crianças em Portugal.",
+   "pausa": 0.4,
+   "tipo": "N",
+   "chave": "Portugal"
+  },
+  {
+   "t": "O que existe de verdade é o medo, passado de pai para filho.",
+   "pausa": 0.5,
+   "tipo": "N",
+   "chave": "o medo"
+  },
+  {
+   "t": "E você? Te ameaçaram com o Homem do Saco quando criança?",
+   "pausa": 0.8,
+   "tipo": "N",
+   "chave": "quando criança"
+  }
+ ],
+ "cenas": [
+  {
+   "de": 0,
+   "fundo": "rua",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "elementos": [
+    {
+     "tipo": "velho",
+     "x": 760
+    }
+   ]
+  },
+  {
+   "de": 2,
+   "fundo": "rua",
+   "zoom": [
+    1.05,
+    1.25
+   ],
+   "elementos": [
+    {
+     "tipo": "velho",
+     "x": 600,
+     "anda": true
+    },
+    {
+     "tipo": "saco",
+     "em": 3
+    }
+   ]
+  },
+  {
+   "de": 4,
+   "fundo": "preto",
+   "elementos": [
+    {
+     "tipo": "placas",
+     "textos": [
+      "HOMEM DO SACO",
+      "VELHO DO SACO",
+      "PAPA-FIGO"
+     ],
+     "em": 4
+    }
+   ]
+  },
+  {
+   "de": 6,
+   "fundo": "casaNoite",
+   "zoom": [
+    1.0,
+    1.1
+   ],
+   "elementos": []
+  },
+  {
+   "de": 7,
+   "fundo": "preto",
+   "elementos": [
+    {
+     "tipo": "titulo",
+     "texto": [
+      "DE ONDE",
+      "ELE VEIO?"
+     ],
+     "em": 7
+    }
+   ]
+  },
+  {
+   "de": 9,
+   "fundo": "preto",
+   "elementos": [
+    {
+     "tipo": "ficha",
+     "linhas": [
+      "CASO REAL: NENHUM",
+      "ORIGEM: DESCONHECIDA",
+      "PARECIDAS: PORTUGAL"
+     ],
+     "carimbo": "SEM REGISTRO",
+     "em": 9
+    }
+   ]
+  },
+  {
+   "de": 11,
+   "fundo": "rua",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "elementos": [
+    {
+     "tipo": "velho",
+     "x": 760
+    },
+    {
+     "tipo": "pergunta"
+    }
+   ]
+  }
+ ],
+ "punch": [
+  0,
+  3,
+  7
+ ],
+ "fontes": "MEGA CURIOSO · TALKPAL (LENDAS PORTUGUESAS)"
+}

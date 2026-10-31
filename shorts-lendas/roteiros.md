@@ -1,5 +1,9 @@
 # Série "Mistérios e lendas do Brasil": lote 1 (7 Shorts)
 
+> **Versão produzida (60 s):** o texto final e as cenas de cada episódio estão em
+> `episodios/epNN.json` (estendido a pedido do usuário para ~60 s). Este arquivo guarda
+> a versão curta aprovada.
+
 Formato fixo: 9:16 nativo, **25–35 s**, frase de gancho visível no **1º quadro**, legenda
 pop (1–3 palavras), câmera de mão, neblina + partículas, punch com motion blur e light
 leak na revelação, ficha datilografada para datas, **final que emenda no começo** (loop)

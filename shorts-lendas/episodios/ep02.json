@@ -1,0 +1,195 @@
+{
+ "numero": 2,
+ "slug": "et-de-varginha",
+ "titulo": "ET de Varginha",
+ "gancho": [
+  "20 DE JANEIRO",
+  "DE 1996"
+ ],
+ "destaque": 1,
+ "falas": [
+  {
+   "t": "Varginha, Minas Gerais. Vinte de janeiro de mil novecentos e noventa e seis.",
+   "pausa": 0.5,
+   "tipo": "N",
+   "leg": "Varginha, Minas Gerais. 20 de janeiro de 1996.",
+   "chave": "1996"
+  },
+  {
+   "t": "Três jovens voltavam para casa quando viram algo agachado num terreno baldio.",
+   "pausa": 0.3,
+   "tipo": "N",
+   "chave": "algo agachado"
+  },
+  {
+   "t": "Elas descreveram uma criatura de pele marrom, cabeça grande e olhos vermelhos.",
+   "pausa": 0.5,
+   "tipo": "N",
+   "chave": "olhos vermelhos"
+  },
+  {
+   "t": "Correram. E a história se espalhou pela cidade em poucas horas.",
+   "pausa": 0.3,
+   "tipo": "N",
+   "chave": "se espalhou"
+  },
+  {
+   "t": "Nos dias seguintes, surgiram boatos de caminhões do Exército e de uma criatura capturada.",
+   "pausa": 0.3,
+   "tipo": "N",
+   "chave": "criatura capturada"
+  },
+  {
+   "t": "O caso virou notícia no mundo inteiro.",
+   "pausa": 0.5,
+   "tipo": "N",
+   "chave": "mundo inteiro"
+  },
+  {
+   "t": "Em mil novecentos e noventa e sete, o Exército abriu um inquérito.",
+   "pausa": 0.2,
+   "tipo": "N",
+   "leg": "Em 1997, o Exército abriu um inquérito.",
+   "chave": "inquérito"
+  },
+  {
+   "t": "A conclusão: nenhum militar participou de nenhuma captura, e nenhuma viatura foi usada nisso.",
+   "pausa": 0.3,
+   "tipo": "N",
+   "chave": "nenhum militar"
+  },
+  {
+   "t": "Segundo o inquérito, as jovens teriam se assustado com um morador da cidade.",
+   "pausa": 0.6,
+   "tipo": "N",
+   "chave": "morador da cidade"
+  },
+  {
+   "t": "Em janeiro de dois mil e vinte e seis, trinta anos depois, a Justiça Militar liberou os documentos.",
+   "pausa": 0.3,
+   "tipo": "N",
+   "leg": "Em janeiro de 2026, 30 anos depois, a Justiça Militar liberou os documentos.",
+   "chave": "liberou os documentos"
+  },
+  {
+   "t": "Mas até hoje há testemunhas e ufólogos que não aceitam essa versão.",
+   "pausa": 0.4,
+   "tipo": "N",
+   "chave": "não aceitam"
+  },
+  {
+   "t": "E Varginha nunca mais deixou de ser a cidade do ET.",
+   "pausa": 0.5,
+   "tipo": "N",
+   "chave": "cidade do ET"
+  },
+  {
+   "t": "E você? Acredita na versão oficial, ou nas testemunhas?",
+   "pausa": 0.8,
+   "tipo": "N",
+   "chave": "versão oficial"
+  }
+ ],
+ "cenas": [
+  {
+   "de": 0,
+   "fundo": "terreno",
+   "zoom": [
+    1.0,
+    1.1
+   ],
+   "elementos": []
+  },
+  {
+   "de": 1,
+   "fundo": "terreno",
+   "zoom": [
+    1.0,
+    1.3
+   ],
+   "elementos": [
+    {
+     "tipo": "olhos",
+     "em": 2
+    }
+   ]
+  },
+  {
+   "de": 3,
+   "fundo": "rua",
+   "zoom": [
+    1.05,
+    1.15
+   ],
+   "elementos": [
+    {
+     "tipo": "faróis",
+     "em": 4
+    }
+   ]
+  },
+  {
+   "de": 5,
+   "fundo": "mapa",
+   "ufs": [
+    "MG"
+   ],
+   "mundo": true,
+   "elementos": []
+  },
+  {
+   "de": 6,
+   "fundo": "preto",
+   "elementos": [
+    {
+     "tipo": "ficha",
+     "linhas": [
+      "INQUÉRITO POLICIAL MILITAR",
+      "1997",
+      "PARTICIPAÇÃO MILITAR: NENHUMA"
+     ],
+     "carimbo": "ARQUIVADO",
+     "em": 6
+    }
+   ]
+  },
+  {
+   "de": 9,
+   "fundo": "preto",
+   "elementos": [
+    {
+     "tipo": "placa",
+     "texto": "STM · 2026: DOCUMENTOS LIBERADOS",
+     "em": 9
+    },
+    {
+     "tipo": "balanca",
+     "em": 10
+    }
+   ]
+  },
+  {
+   "de": 11,
+   "fundo": "terreno",
+   "zoom": [
+    1.0,
+    1.15
+   ],
+   "elementos": [
+    {
+     "tipo": "olhos",
+     "em": 11
+    },
+    {
+     "tipo": "pergunta"
+    }
+   ]
+  }
+ ],
+ "punch": [
+  2,
+  7,
+  10
+ ],
+ "fontes": "MIGALHAS · O LIBERAL · JORNAL OPÇÃO · BAND (JAN/2026)"
+}

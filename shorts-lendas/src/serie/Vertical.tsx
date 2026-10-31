@@ -54,7 +54,7 @@ export const camera = (frame: number, susto = 0) => {
 // Vazamento de luz (light leak) com tonalidade quente ou fria.
 export const VazamentoLuz: React.FC<{de: number; dur?: number; hue?: number; seed?: number}> = ({de, dur = 30, hue = 0, seed = 3}) => (
 	<Sequence from={de} durationInFrames={dur} layout="none">
-		<AbsoluteFill style={{mixBlendMode: 'screen', opacity: 0.85}}>
+		<AbsoluteFill style={{mixBlendMode: 'screen', opacity: 0.55}}>
 			<LightLeak seed={seed} hueShift={hue} />
 		</AbsoluteFill>
 	</Sequence>

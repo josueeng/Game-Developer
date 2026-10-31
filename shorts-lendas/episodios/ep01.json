@@ -1,0 +1,226 @@
+{
+ "numero": 1,
+ "slug": "corpo-seco",
+ "titulo": "Corpo Seco",
+ "gancho": [
+  "ELE NÃO FOI",
+  "ACEITO NEM",
+  "PELA TERRA"
+ ],
+ "destaque": 2,
+ "falas": [
+  {
+   "t": "Dizem que existe um homem que nem a terra aceitou.",
+   "pausa": 0.5,
+   "tipo": "N",
+   "chave": "nem a terra"
+  },
+  {
+   "t": "Ele viveu no interior do Brasil, e era conhecido pela maldade.",
+   "pausa": 0.2,
+   "tipo": "N",
+   "chave": "maldade"
+  },
+  {
+   "t": "Maltratava os animais, os vizinhos... e a própria mãe.",
+   "pausa": 0.4,
+   "tipo": "N",
+   "leg": "Maltratava os animais, os vizinhos… e a própria mãe.",
+   "chave": "própria mãe"
+  },
+  {
+   "t": "Contam que, um dia, ele levantou a mão contra ela.",
+   "pausa": 0.2,
+   "tipo": "N",
+   "chave": "levantou a mão"
+  },
+  {
+   "t": "E ela rogou uma praga: que nem a terra o quisesse.",
+   "pausa": 0.6,
+   "tipo": "N",
+   "chave": "praga"
+  },
+  {
+   "t": "Quando ele morreu, fizeram o enterro.",
+   "pausa": 0.2,
+   "tipo": "N"
+  },
+  {
+   "t": "Mas o caixão não afundava.",
+   "pausa": 0.4,
+   "tipo": "N",
+   "chave": "não afundava"
+  },
+  {
+   "t": "Cavavam de novo, e a terra empurrava o corpo de volta.",
+   "pausa": 0.3,
+   "tipo": "N",
+   "chave": "de volta"
+  },
+  {
+   "t": "Até que desistiram, e deixaram o corpo ao relento.",
+   "pausa": 0.2,
+   "tipo": "N"
+  },
+  {
+   "t": "Ele secou ao sol, até ficar só pele e osso.",
+   "pausa": 0.3,
+   "tipo": "N",
+   "chave": "pele e osso"
+  },
+  {
+   "t": "E virou o Corpo Seco, que dizem vagar pelas estradas à noite.",
+   "pausa": 0.6,
+   "tipo": "N",
+   "chave": "Corpo Seco"
+  },
+  {
+   "t": "A lenda tem várias versões.",
+   "pausa": 0.2,
+   "tipo": "N"
+  },
+  {
+   "t": "Em Pouso Alegre, Minas Gerais, contam que tudo aconteceu em mil e novecentos.",
+   "pausa": 0.2,
+   "tipo": "N",
+   "leg": "Em Pouso Alegre, Minas Gerais, contam que tudo aconteceu em 1900.",
+   "chave": "1900"
+  },
+  {
+   "t": "No Paraná, há quem diga que foi nos anos cinquenta.",
+   "pausa": 0.4,
+   "tipo": "N",
+   "leg": "No Paraná, há quem diga que foi nos anos 50.",
+   "chave": "anos 50"
+  },
+  {
+   "t": "E da lenda veio um ditado: quem bate na mãe fica com a mão seca.",
+   "pausa": 0.6,
+   "tipo": "N",
+   "chave": "mão seca"
+  },
+  {
+   "t": "Na sua cidade contam essa história? Escreve aqui embaixo.",
+   "pausa": 0.8,
+   "tipo": "N",
+   "chave": "Escreve aqui"
+  }
+ ],
+ "cenas": [
+  {
+   "de": 0,
+   "fundo": "floresta",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "elementos": [
+    {
+     "tipo": "vulto",
+     "x": 700
+    }
+   ]
+  },
+  {
+   "de": 2,
+   "fundo": "casaNoite",
+   "zoom": [
+    1.05,
+    1.15
+   ],
+   "elementos": [
+    {
+     "tipo": "vulto",
+     "x": 380,
+     "em": 3
+    }
+   ]
+  },
+  {
+   "de": 5,
+   "fundo": "cemiterio",
+   "zoom": [
+    1.0,
+    1.15
+   ],
+   "elementos": [
+    {
+     "tipo": "caixao",
+     "em": 6
+    }
+   ]
+  },
+  {
+   "de": 9,
+   "fundo": "floresta",
+   "zoom": [
+    1.15,
+    1.0
+   ],
+   "elementos": [
+    {
+     "tipo": "corpoSeco",
+     "x": 540
+    },
+    {
+     "tipo": "titulo",
+     "texto": [
+      "CORPO",
+      "SECO"
+     ],
+     "em": 10
+    }
+   ]
+  },
+  {
+   "de": 11,
+   "fundo": "mapa",
+   "ufs": [
+    "MG",
+    "PR"
+   ],
+   "elementos": [
+    {
+     "tipo": "ficha",
+     "linhas": [
+      "POUSO ALEGRE (MG) · 1900",
+      "PARANÁ · ANOS 50"
+     ],
+     "carimbo": "VERSÕES",
+     "em": 12
+    }
+   ]
+  },
+  {
+   "de": 14,
+   "fundo": "preto",
+   "elementos": [
+    {
+     "tipo": "placa",
+     "texto": "\"QUEM BATE NA MÃE FICA COM A MÃO SECA\"",
+     "em": 14
+    }
+   ]
+  },
+  {
+   "de": 15,
+   "fundo": "floresta",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "elementos": [
+    {
+     "tipo": "pergunta"
+    }
+   ]
+  }
+ ],
+ "punch": [
+  0,
+  6,
+  10,
+  14
+ ],
+ "fontes": "ROLLING STONE BRASIL · TODA MATÉRIA · PREPARAENEM"
+}

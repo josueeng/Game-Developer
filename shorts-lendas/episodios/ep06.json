@@ -1,0 +1,211 @@
+{
+ "numero": 6,
+ "slug": "loira-do-banheiro",
+ "titulo": "A Loira do Banheiro",
+ "gancho": [
+  "ELA",
+  "EXISTIU?"
+ ],
+ "destaque": 1,
+ "falas": [
+  {
+   "t": "Loira do banheiro...",
+   "pausa": 0.3,
+   "tipo": "S",
+   "leg": "Loira do banheiro…",
+   "chave": "Loira do banheiro"
+  },
+  {
+   "t": "Loira do banheiro...",
+   "pausa": 0.3,
+   "tipo": "S",
+   "leg": "Loira do banheiro…",
+   "chave": "Loira do banheiro"
+  },
+  {
+   "t": "Loira do banheiro...",
+   "pausa": 0.7,
+   "tipo": "S",
+   "leg": "Loira do banheiro…",
+   "chave": "Loira do banheiro"
+  },
+  {
+   "t": "A lenda pode ter começado com uma mulher de verdade.",
+   "pausa": 0.4,
+   "tipo": "N",
+   "chave": "mulher de verdade"
+  },
+  {
+   "t": "Maria Augusta, filha do Visconde de Guaratinguetá, no interior de São Paulo.",
+   "pausa": 0.3,
+   "tipo": "N",
+   "chave": "Maria Augusta"
+  },
+  {
+   "t": "Segundo os relatos, aos catorze anos ela foi casada à força.",
+   "pausa": 0.3,
+   "tipo": "N",
+   "leg": "Segundo os relatos, aos 14 anos ela foi casada à força.",
+   "chave": "à força"
+  },
+  {
+   "t": "Fugiu para Paris, e lá morreu, em mil oitocentos e noventa e um, com apenas vinte e seis anos.",
+   "pausa": 0.4,
+   "tipo": "N",
+   "leg": "Fugiu para Paris, e lá morreu, em 1891, com apenas 26 anos.",
+   "chave": "1891"
+  },
+  {
+   "t": "O atestado de óbito desapareceu.",
+   "pausa": 0.5,
+   "tipo": "N",
+   "chave": "desapareceu"
+  },
+  {
+   "t": "Segundo relatos, a mãe não quis enterrar a filha, e manteve o corpo numa urna de vidro, dentro de casa.",
+   "pausa": 0.6,
+   "tipo": "N",
+   "chave": "urna de vidro"
+  },
+  {
+   "t": "Anos depois, o casarão virou escola.",
+   "pausa": 0.3,
+   "tipo": "N",
+   "chave": "virou escola"
+  },
+  {
+   "t": "E foi entre os alunos que nasceu a história da moça loira no banheiro.",
+   "pausa": 0.4,
+   "tipo": "N",
+   "chave": "no banheiro"
+  },
+  {
+   "t": "Mas atenção: essa ligação nunca foi provada.",
+   "pausa": 0.4,
+   "tipo": "N",
+   "chave": "nunca foi provada"
+  },
+  {
+   "t": "Você já chamou a Loira do Banheiro na escola?",
+   "pausa": 0.8,
+   "tipo": "N",
+   "chave": "já chamou"
+  }
+ ],
+ "cenas": [
+  {
+   "de": 0,
+   "fundo": "banheiro",
+   "zoom": [
+    1.0,
+    1.15
+   ],
+   "elementos": [
+    {
+     "tipo": "espelho"
+    }
+   ]
+  },
+  {
+   "de": 3,
+   "fundo": "preto",
+   "elementos": [
+    {
+     "tipo": "ficha",
+     "linhas": [
+      "MARIA AUGUSTA",
+      "GUARATINGUETÁ (SP)",
+      "1864 – 1891"
+     ],
+     "em": 4
+    }
+   ]
+  },
+  {
+   "de": 5,
+   "fundo": "preto",
+   "elementos": [
+    {
+     "tipo": "placa",
+     "texto": "14 ANOS · CASAMENTO ARRANJADO",
+     "em": 5
+    }
+   ]
+  },
+  {
+   "de": 6,
+   "fundo": "paris",
+   "zoom": [
+    1.0,
+    1.1
+   ],
+   "elementos": [
+    {
+     "tipo": "ficha",
+     "linhas": [
+      "PARIS · 22/04/1891",
+      "26 ANOS"
+     ],
+     "carimbo": "ATESTADO SUMIU",
+     "em": 6,
+     "curta": true
+    }
+   ]
+  },
+  {
+   "de": 8,
+   "fundo": "preto",
+   "zoom": [
+    1.0,
+    1.15
+   ],
+   "elementos": [
+    {
+     "tipo": "urna",
+     "em": 8
+    }
+   ]
+  },
+  {
+   "de": 9,
+   "fundo": "escola",
+   "zoom": [
+    1.0,
+    1.1
+   ],
+   "elementos": []
+  },
+  {
+   "de": 11,
+   "fundo": "preto",
+   "elementos": [
+    {
+     "tipo": "fatoLenda",
+     "em": 11
+    }
+   ]
+  },
+  {
+   "de": 12,
+   "fundo": "banheiro",
+   "zoom": [
+    1.0,
+    1.15
+   ],
+   "elementos": [
+    {
+     "tipo": "espelho"
+    },
+    {
+     "tipo": "pergunta"
+    }
+   ]
+  }
+ ],
+ "punch": [
+  3,
+  7,
+  8
+ ],
+ "fontes": "CORREIO BRAZILIENSE · ROLLING STONE BRASIL · GENI · TURISMO GUARÁ"
+}
