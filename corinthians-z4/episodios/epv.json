@@ -1,0 +1,162 @@
+{
+ "numero": 0,
+ "slug": "corinthians-v",
+ "titulo": "O Corinthians vai cair?",
+ "gancho": [
+  "O CORINTHIANS",
+  "VAI CAIR?"
+ ],
+ "destaque": 1,
+ "cenario": {
+  "pts": 39,
+  "falta": 6,
+  "p45": 47,
+  "p42": 87,
+  "placar": "VITÓRIA",
+  "frase": "Com a vitória no clássico contra o São Paulo, o Corinthians chega a trinta e nove pontos.",
+  "leg": "Com a vitória no clássico contra o São Paulo, o Corinthians chega a 39 pontos."
+ },
+ "falas": [
+  {
+   "t": "O Corinthians pode cair pela segunda vez na história?",
+   "pausa": 0.5,
+   "tipo": "N",
+   "chave": "segunda vez"
+  },
+  {
+   "t": "Depois de trinta e três rodadas, o time estava em décimo sétimo, com trinta e seis pontos, abrindo a zona de rebaixamento.",
+   "pausa": 0.3,
+   "tipo": "N",
+   "leg": "Depois de 33 rodadas, o time estava em 17º, com 36 pontos, abrindo a zona de rebaixamento.",
+   "chave": "zona de rebaixamento"
+  },
+  {
+   "t": "Os modelos de probabilidade davam entre trinta e oito e quarenta e quatro por cento de chance de queda.",
+   "pausa": 0.4,
+   "tipo": "N",
+   "leg": "Os modelos de probabilidade davam entre 38% e 44% de chance de queda.",
+   "chave": "chance de queda"
+  },
+  {
+   "t": "Com a vitória no clássico contra o São Paulo, o Corinthians chega a trinta e nove pontos.",
+   "pausa": 0.4,
+   "tipo": "N",
+   "leg": "Com a vitória no clássico contra o São Paulo, o Corinthians chega a 39 pontos.",
+   "chave": "39 pontos"
+  },
+  {
+   "t": "Faltam quatro jogos: Botafogo em casa, Atlético Mineiro fora, Grêmio em casa e Remo fora.",
+   "pausa": 0.3,
+   "tipo": "N",
+   "leg": "Faltam 4 jogos: Botafogo em casa, Atlético-MG fora, Grêmio em casa e Remo fora.",
+   "chave": "4 jogos"
+  },
+  {
+   "t": "Para ficar praticamente salvo, precisa chegar a quarenta e cinco pontos: mais seis.",
+   "pausa": 0.4,
+   "tipo": "N",
+   "leg": "Para ficar praticamente salvo, precisa chegar a 45 pontos: mais 6.",
+   "chave": "45 pontos"
+  },
+  {
+   "t": "Nós simulamos as oitenta e uma combinações possíveis desses quatro jogos.",
+   "pausa": 0.3,
+   "tipo": "N",
+   "leg": "Nós simulamos as 81 combinações possíveis desses 4 jogos.",
+   "chave": "81 combinações"
+  },
+  {
+   "t": "Somando as chances, ele chega aos quarenta e cinco em quarenta e sete por cento dos casos.",
+   "pausa": 0.3,
+   "tipo": "N",
+   "leg": "Somando as chances, ele chega aos 45 em 47% dos casos.",
+   "chave": "47%"
+  },
+  {
+   "t": "E chega aos quarenta e dois, a pontuação que costuma bastar, em oitenta e sete por cento.",
+   "pausa": 0.5,
+   "tipo": "N",
+   "leg": "E chega aos 42, a pontuação que costuma bastar, em 87%.",
+   "chave": "87%"
+  },
+  {
+   "t": "E se cair? Em dois mil e sete, o Corinthians caiu e voltou no ano seguinte, campeão da Série B.",
+   "pausa": 0.3,
+   "tipo": "N",
+   "leg": "E se cair? Em 2007, o Corinthians caiu e voltou no ano seguinte, campeão da Série B.",
+   "chave": "campeão da Série B"
+  },
+  {
+   "t": "Palmeiras, Vasco, Botafogo e Cruzeiro também caíram e voltaram campeões.",
+   "pausa": 0.3,
+   "tipo": "N",
+   "chave": "voltaram campeões"
+  },
+  {
+   "t": "Mas a Série B nunca é garantida.",
+   "pausa": 0.5,
+   "tipo": "N",
+   "chave": "nunca é garantida"
+  },
+  {
+   "t": "E você? O Corinthians escapa? Comenta aí.",
+   "pausa": 0.8,
+   "tipo": "N",
+   "chave": "Comenta aí"
+  }
+ ],
+ "cenas": [
+  {
+   "de": 0,
+   "fundo": "estadio",
+   "elementos": []
+  },
+  {
+   "de": 1,
+   "fundo": "tabela",
+   "elementos": []
+  },
+  {
+   "de": 2,
+   "fundo": "risco",
+   "elementos": []
+  },
+  {
+   "de": 3,
+   "fundo": "placar",
+   "elementos": []
+  },
+  {
+   "de": 4,
+   "fundo": "jogos",
+   "elementos": []
+  },
+  {
+   "de": 5,
+   "fundo": "meta",
+   "elementos": []
+  },
+  {
+   "de": 6,
+   "fundo": "simulacao",
+   "elementos": []
+  },
+  {
+   "de": 9,
+   "fundo": "serieb",
+   "elementos": []
+  },
+  {
+   "de": 11,
+   "fundo": "estadio",
+   "elementos": []
+  }
+ ],
+ "punch": [
+  0,
+  3,
+  7,
+  11
+ ],
+ "fontes": "UFMG/PLACAR · VALORFINAL/TERRA · NETFLU · LANCE · GAZETA ESPORTIVA · SIMULAÇÃO PRÓPRIA"
+}

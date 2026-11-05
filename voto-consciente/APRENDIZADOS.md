@@ -541,3 +541,16 @@ Regras novas para thumbnails:
   @remotion/motion-blur (CameraMotionBlur só em 6–7 quadros: é caro), @remotion/noise.
 - Erros: ficha e gancho no mesmo lugar no quadro 0 (tirei a ficha da 1ª cena); light leak
   a 0,85 deixava tudo vermelho (baixei para 0,55).
+
+---
+
+# Short de futebol: "O Corinthians vai cair?" (`../corinthians-z4`)
+
+- O jogo decisivo (São Paulo × Corinthians) estava em andamento e o placar não aparecia
+  nas buscas (sites de futebol bloqueados): produzi **3 versões** (vitória, empate,
+  derrota) para publicar a certa assim que o jogo acabasse.
+- Simulação própria simples e declarada: 4 jogos × 3 resultados = 81 combinações,
+  probabilidade média de mandante/visitante; mostra chance de chegar a 45 (risco ~0) e 42.
+- Reaproveitou o kit da série (`shorts-lendas`) e os scripts de narração/sons; a
+  narração passava de 58 s e o ajuste automático acelerou a voz para 1,31×: usar
+  `--alvo 68` quando o texto é longo, em vez de deixar a voz corrida.
